@@ -11,6 +11,8 @@ public class PlayerMoving : MonoBehaviour
 
     //Понижающий коэфициент при беге назад
     public float RunBackReductionCoef = 2f;
+    //Коэфициент ускорения
+    public float AccelarationMultiplyCoef = 2f;
 
     private Rigidbody _rb;
     private Animator _animator;
@@ -26,12 +28,10 @@ public class PlayerMoving : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        float accelaration = Input.GetAxis("Acceleration") == 0 ? 1 : Input.GetAxis("Acceleration");
-
+        float accelaration = Input.GetAxis("Acceleration");
 
         Rotation(moveHorizontal);
         Move(moveVertical, accelaration);
-        Animation(moveVertical);
     }
 
     private void Rotation(float moveHorizontal)
@@ -48,7 +48,10 @@ public class PlayerMoving : MonoBehaviour
 
         Vector3 movement = new Vector3(0f, 0f, moveVertical);
 
+        accelaration = accelaration < 1 ? 1 : accelaration * AccelarationMultiplyCoef;
         _rb.AddRelativeForce(movement * Speed * accelaration);
+
+        Animation(Speed * accelaration * moveVertical);
     }
 
     private void Animation( float speed)
