@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -13,6 +11,10 @@ public class PlayerMoving : MonoBehaviour
     public float RunBackReductionCoef = 2f;
     //Коэфициент ускорения
     public float AccelarationMultiplyCoef = 2f;
+    
+    public float StaminaCostPerFrame = 2f;
+    
+    public Bar StaminaBar;
 
     private Rigidbody _rb;
     private Animator _animator;
@@ -29,6 +31,9 @@ public class PlayerMoving : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         float accelaration = Input.GetAxis("Acceleration");
+
+        float currentStamina = StaminaBar.BarSlider.value;
+        if (accelaration == 0) StaminaBar.SetValue(currentStamina + 2f);
 
         Rotation(moveHorizontal);
         Move(moveVertical, accelaration);
@@ -48,13 +53,28 @@ public class PlayerMoving : MonoBehaviour
 
         Vector3 movement = new Vector3(0f, 0f, moveVertical);
 
-        accelaration = accelaration < 1 ? 1 : accelaration * AccelarationMultiplyCoef;
+        //accelaration = accelaration < 1 ? 1 : accelaration * AccelarationMultiplyCoef;
+
+        if (accelaration < 1)
+        {
+            accelaration = 1;
+        }
+        else
+        {
+            float currentStamina = StaminaBar.BarSlider.value;
+            if (currentStamina > 0)
+            {
+                StaminaBar.SetValue(currentStamina - StaminaCostPerFrame);
+                accelaration *= AccelarationMultiplyCoef;
+            }
+        }
+
         _rb.AddRelativeForce(movement * Speed * accelaration);
 
         Animation(Speed * accelaration * moveVertical);
     }
 
-    private void Animation( float speed)
+    private void Animation(float speed)
     {
         _animator.SetFloat("Speed", speed);
     }
