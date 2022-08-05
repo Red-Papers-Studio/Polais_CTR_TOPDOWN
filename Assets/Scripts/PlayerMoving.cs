@@ -2,19 +2,18 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(PlayerStats))]
 public class PlayerMoving : MonoBehaviour
 {
-    public float Speed = 10f;
-    public float RotationSpeed = 3f;
-
+    [SerializeField] private float Speed = 10f;
+    [SerializeField] private float RotationSpeed = 3f;
     //Понижающий коэфициент при беге назад
-    public float RunBackReductionCoef = 2f;
+    [SerializeField] private float RunBackReductionCoef = 2f;
     //Коэфициент ускорения
-    public float AccelarationMultiplyCoef = 2f;
-    
-    public float StaminaCostPerFrame = 2f;
-    
-    public Bar StaminaBar;
+    [SerializeField] private float AccelarationMultiplyCoef = 2f;
+
+    [SerializeField] private float StaminaCostPerFrame = 2f;
+    [SerializeField] private PlayerStats Stats;
 
     private Rigidbody _rb;
     private Animator _animator;
@@ -31,9 +30,6 @@ public class PlayerMoving : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         float accelaration = Input.GetAxis("Acceleration");
-
-        float currentStamina = StaminaBar.BarSlider.value;
-        if (accelaration == 0) StaminaBar.SetValue(currentStamina + 2f);
 
         Rotation(moveHorizontal);
         Move(moveVertical, accelaration);
@@ -53,18 +49,17 @@ public class PlayerMoving : MonoBehaviour
 
         Vector3 movement = new Vector3(0f, 0f, moveVertical);
 
-        //accelaration = accelaration < 1 ? 1 : accelaration * AccelarationMultiplyCoef;
-
         if (accelaration < 1)
         {
             accelaration = 1;
+            //Востановление стамины каждый кадр без бега
+            Stats.Stamina += StaminaCostPerFrame/10;
         }
         else
         {
-            float currentStamina = StaminaBar.BarSlider.value;
-            if (currentStamina > 0)
+            if (Stats.Stamina > 0)
             {
-                StaminaBar.SetValue(currentStamina - StaminaCostPerFrame);
+                Stats.Stamina -= StaminaCostPerFrame;
                 accelaration *= AccelarationMultiplyCoef;
             }
         }
