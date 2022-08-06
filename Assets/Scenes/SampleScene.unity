@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43736115, g: 0.48514777, b: 0.5654203, a: 1}
+  m_IndirectSpecularColor: {r: 0.43736157, g: 0.48514825, b: 0.56542134, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -321,7 +321,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7907692, y: 1}
+    m_SensorSize: {x: 1.7772675, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -949,7 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ae6b175b9eb6044944e7295cdc2d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1120069278
+--- !u!114 &1120069280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -958,10 +958,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1120069267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 856e8847907724c45b732c82c8df9617, type: 3}
+  m_Script: {fileID: 11500000, guid: dd065021ae3b0874ea0582bd2c602712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 403908e42b903b347a21f96c3cc7208b, type: 2}
+  weaponData: {fileID: 11400000, guid: f0e2bc908902a38419a479c60aefe48a, type: 2}
 --- !u!1 &1157561392
 GameObject:
   m_ObjectHideFlags: 0
