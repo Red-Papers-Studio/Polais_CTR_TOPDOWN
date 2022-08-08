@@ -81,11 +81,12 @@ public class PlayerMoving : MonoBehaviour
 
         _rb.AddRelativeForce(movement * Speed * accelaration);
 
-        Animation(Speed * accelaration * moveVertical);
+        Animation(Speed * accelaration * moveVertical, moveHorizontal);
     }
 
-    private void Animation(float speed)
+    private void Animation(float speed, float horizontalSpeed)
     {
         _animator.SetFloat("Speed", speed);
+        _animator.SetFloat("HorizontalSpeed", horizontalSpeed);
     }
 }

@@ -321,7 +321,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8425926, y: 1}
+    m_SensorSize: {x: 2.3933933, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1232,7 +1232,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337452594}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9cbb2a4d135c31e4cbeadac255ba4ecb, type: 3}
+  m_Avatar: {fileID: 9000000, guid: d7d8a898bfda0a84487b785ac9d7f73b, type: 3}
   m_Controller: {fileID: 9100000, guid: 4c7fe8e1a3919c549a79a706afefd1ce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
