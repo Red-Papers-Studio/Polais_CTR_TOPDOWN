@@ -51,6 +51,7 @@ public class PlayerMoving : MonoBehaviour
         Vector3 pos = hit.point;
         pos.y = transform.position.y;
         Vector3 coordinate = pos;
+
         test.transform.position = coordinate;
         transform.LookAt(coordinate);
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(coordinate), RotationSpeed * Time.deltaTime);
