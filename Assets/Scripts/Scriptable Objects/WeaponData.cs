@@ -11,4 +11,6 @@ public class WeaponData : ScriptableObject
     public float ReloadingTime;
     [HideInInspector]
     public bool IsReloading;
+    [HideInInspector]
+    public float timeSinceLastAttack;
 }

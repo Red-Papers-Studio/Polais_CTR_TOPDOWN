@@ -4,11 +4,25 @@ public class LongRangeWeapon : MonoBehaviour
 {
     [SerializeField]
     private LongRangeWeaponData weaponData;
-    private float timeSinceLastAttack;
+    private float TimeSinceLastAttack
+    {
+        get => weaponData.timeSinceLastAttack;
+        set
+        {
+            if(weaponData.timeSinceLastAttack >= weaponData.ReloadingTime)
+            {
+                weaponData.IsReloading = false;
+            }
+            else
+            {
+                weaponData.timeSinceLastAttack = value;
+            }
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        timeSinceLastAttack = weaponData.ReloadingTime;
+        TimeSinceLastAttack = weaponData.ReloadingTime;
         weaponData.IsReloading = false;
         PlayerAttack.Attack += Attack;
         PlayerBlock.Block += Block;
@@ -16,18 +30,11 @@ public class LongRangeWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (timeSinceLastAttack >= weaponData.ReloadingTime)
-        {
-            weaponData.IsReloading = false;
-        }
-        else
-        {
-            timeSinceLastAttack += Time.deltaTime;
-        }
+        TimeSinceLastAttack += Time.deltaTime;
     }
     private bool CanAttack()
     {
-        return !weaponData.IsReloading && weaponData.ReloadingTime <= timeSinceLastAttack;
+        return !weaponData.IsReloading && weaponData.ReloadingTime <= TimeSinceLastAttack;
     }
     private void Attack()
     {
@@ -37,12 +44,12 @@ public class LongRangeWeapon : MonoBehaviour
             {
                 OnWeaponAttack();
                 weaponData.CurrentAmmunationCount--;
-                timeSinceLastAttack = 0;
+                weaponData.timeSinceLastAttack = 0;
                 weaponData.IsReloading = true;
             }
             else
             {
-                Debug.Log($"Reloading...({timeSinceLastAttack}sec)");
+                Debug.Log($"Reloading...({TimeSinceLastAttack}sec)");
             }
         }
         else
