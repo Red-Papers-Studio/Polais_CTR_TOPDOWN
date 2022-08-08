@@ -16,31 +16,33 @@ public class LongRangeWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (timeSinceLastAttack > weaponData.ReloadingTime)
+        if (timeSinceLastAttack >= weaponData.ReloadingTime)
         {
             weaponData.IsReloading = false;
         }
         else
         {
-            timeSinceLastAttack -= Time.deltaTime;
+            timeSinceLastAttack += Time.deltaTime;
         }
     }
-    private bool CanAttack() => !weaponData.IsReloading && weaponData.ReloadingTime < timeSinceLastAttack;
-
+    private bool CanAttack()
+    {
+        return !weaponData.IsReloading && weaponData.ReloadingTime <= timeSinceLastAttack;
+    }
     private void Attack()
     {
         if (weaponData.CurrentAmmunationCount > 0)
         {
             if (CanAttack())
             {
+                OnWeaponAttack();
                 weaponData.CurrentAmmunationCount--;
                 timeSinceLastAttack = 0;
                 weaponData.IsReloading = true;
-                OnWeaponAttack();
             }
             else
             {
-                Debug.Log($"Reloading...({weaponData.ReloadingTime - timeSinceLastAttack}sec)");
+                Debug.Log($"Reloading...({timeSinceLastAttack}sec)");
             }
         }
         else
