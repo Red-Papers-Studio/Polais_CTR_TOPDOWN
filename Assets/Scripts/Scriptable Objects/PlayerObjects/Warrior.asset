@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea30d4b2d503984c98c5c1822eccd92, type: 3}
-  m_Name: Claimore
+  m_Script: {fileID: 11500000, guid: d8fbfb328e650bb40836d7a8b606d166, type: 3}
+  m_Name: Warrior
   m_EditorClassIdentifier: 
-  Name: Claimore
-  Damage: 400
-  Block: 300
-  Durability: 920
-  IsTwoHanded: 1
-  ReloadingTime: 2
-  IsReloading: 1
-  timeSinceLastAttack: 1.3218352
-  AttackRadius: 0
+  HP: 100
+  Mana: 100
+  Stamina: 100

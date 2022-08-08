@@ -19,5 +19,7 @@ MonoBehaviour:
   IsTwoHanded: 1
   ReloadingTime: 2
   IsReloading: 0
+  timeSinceLastAttack: 2.0028038
   AttackRange: 0
-  CurrentAmmunationCount: 10
+  CurrentAmmunationCount: 67
+  AmmunationSpeed: 3
