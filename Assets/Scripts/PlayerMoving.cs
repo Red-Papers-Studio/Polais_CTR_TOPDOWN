@@ -44,9 +44,13 @@ public class PlayerMoving : MonoBehaviour
         //_rb.MoveRotation(quaternion);
 
         Vector3 Mpos = Input.mousePosition;
-        Vector3 pos = Camera.main.ScreenPointToRay(Mpos).direction * 12;
+        Ray mouseRay = Camera.main.ScreenPointToRay(Mpos);
+        RaycastHit hit = new RaycastHit();
+        Physics.Raycast(mouseRay, out hit);
+
+        Vector3 pos = hit.point;
         pos.y = transform.position.y;
-        Vector3 coordinate = new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z) + pos;
+        Vector3 coordinate = pos;
         test.transform.position = coordinate;
         transform.LookAt(coordinate);
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(coordinate), RotationSpeed * Time.deltaTime);
