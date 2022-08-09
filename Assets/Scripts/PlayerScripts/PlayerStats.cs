@@ -68,17 +68,22 @@ public class PlayerStats : MonoBehaviour, IDamagable
         if (Hp <= 0)
         {
             DeadAnimation();
-            Destroy(gameObject);
         }
         else
         {
-            GetDamageAnimation();
+            StartDamageAnimation();
         }
     }
 
-    private void GetDamageAnimation()
+    private void StartDamageAnimation()
     {
         _animator.SetBool("IsDamaged", true);
+    }
+
+    private void EndDamageAnimation()
+    {
+        _animator.SetBool("IsDamaged", false);
+        Debug.Log("End animation");
     }
 
     private void DeadAnimation()
