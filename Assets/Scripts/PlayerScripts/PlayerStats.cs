@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour, IDamagable
     [SerializeField] private Bar ManaBar;
     [SerializeField] private Bar StaminaBar;
 
+    [SerializeField] private Animator animator;
+
     public float Hp
     {
         get
@@ -62,7 +64,25 @@ public class PlayerStats : MonoBehaviour, IDamagable
     public void Damage(float damage)
     {
         Hp -= damage;
-        if (Hp <= 0) Destroy(gameObject);
+        if (Hp <= 0)
+        {
+            DeadAnimation();
+            Destroy(gameObject);
+        }
+        else
+        {
+            GetDamageAnimation();
+        }
+    }
+
+    private void GetDamageAnimation()
+    {
+        animator.SetBool("IsDamaged", true);
+    }
+
+    private void DeadAnimation()
+    {
+        animator.SetBool("IsDead", true);
     }
 
     // Start is called before the first frame update
