@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8fbfb328e650bb40836d7a8b606d166, type: 3}
-  m_Name: Warrior
+  m_Name: MainHero
   m_EditorClassIdentifier: 
-  HP: 100
-  Mana: 100
-  Stamina: 100
+  HP: 4390
+  Mana: 1000
+  Stamina: 600

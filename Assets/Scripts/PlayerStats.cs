@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, IDamagable
 {
     [SerializeField] private Stats Stats;
     private float _ñurrentHP;
@@ -57,6 +57,12 @@ public class PlayerStats : MonoBehaviour
             if (_ñurrentStamina < 0) _ñurrentStamina = 0;
             if (_ñurrentStamina > Stats.Stamina) _ñurrentStamina = Stats.Stamina;
         }
+    }
+
+    public void Damage(float damage)
+    {
+        Hp -= damage;
+        if (Hp <= 0) Destroy(gameObject);
     }
 
     // Start is called before the first frame update

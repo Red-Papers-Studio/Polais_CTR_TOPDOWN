@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    private void Awake()
-    {
-        Destroy(gameObject, 3);
-    }
-
+    [SerializeField]
+    private LongRangeWeaponData weaponData;
     private void OnCollisionEnter(Collision collision)
     {
-        
+        IDamagable target = collision.gameObject.GetComponent<IDamagable>();
+        target?.Damage(weaponData.Damage);
+    }
+    private void Awake()
+    {
+        Destroy(gameObject, 4);
     }
 }

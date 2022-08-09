@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea30d4b2d503984c98c5c1822eccd92, type: 3}
-  m_Name: Axe
+  m_Script: {fileID: 11500000, guid: d8fbfb328e650bb40836d7a8b606d166, type: 3}
+  m_Name: Guard
   m_EditorClassIdentifier: 
-  Name: Axe
-  Damage: 360
-  Block: 200
-  Durability: 400
-  IsTwoHanded: 0
-  ReloadingTime: 0.2
-  IsReloading: 0
-  timeSinceLastAttack: 0
-  AttackRadius: 0
+  HP: 3500
+  Mana: 250
+  Stamina: 400

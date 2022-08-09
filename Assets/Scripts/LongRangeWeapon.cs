@@ -12,7 +12,7 @@ public class LongRangeWeapon : MonoBehaviour
         get => weaponData.timeSinceLastAttack;
         set
         {
-            if(weaponData.timeSinceLastAttack >= weaponData.ReloadingTime)
+            if (weaponData.timeSinceLastAttack >= weaponData.ReloadingTime)
             {
                 weaponData.IsReloading = false;
             }
@@ -41,30 +41,22 @@ public class LongRangeWeapon : MonoBehaviour
     }
     private void Attack()
     {
-        if (weaponData.CurrentAmmunationCount > 0)
+        if (CanAttack())
         {
-            if (CanAttack())
-            {
-                OnWeaponAttack();
-                weaponData.CurrentAmmunationCount--;
-                weaponData.timeSinceLastAttack = 0;
-                weaponData.IsReloading = true;
-            }
-            else
-            {
-                Debug.Log($"Reloading...({TimeSinceLastAttack}sec)");
-            }
+            OnWeaponAttack();
+            weaponData.timeSinceLastAttack = 0;
+            weaponData.IsReloading = true;
         }
         else
         {
-            Debug.Log("No ammo");
+            Debug.Log($"Reloading...({TimeSinceLastAttack}sec)");
         }
     }
 
     private void OnWeaponAttack()
     {
         var ammo = Instantiate(ammoPrefab, ammoSpawnPoint.position, ammoSpawnPoint.rotation);
-        
+
         ammo.GetComponent<Rigidbody>().velocity = ammoSpawnPoint.transform.forward * weaponData.AmmunationSpeed;
         Debug.Log(weaponData.Name + " attackted in long range with damage " + weaponData.Damage);
     }
