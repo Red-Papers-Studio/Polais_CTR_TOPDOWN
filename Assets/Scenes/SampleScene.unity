@@ -479,7 +479,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.305296, y: 1}
+    m_SensorSize: {x: 2.3021808, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2071,16 +2071,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1221445879}
     - target: {fileID: 7720650823787778007, guid: 81490b9f56d6ab94ab43f024bf6de0e7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720650823787778007, guid: 81490b9f56d6ab94ab43f024bf6de0e7, type: 3}
       propertyPath: viewRange
-      value: 0
+      value: 6.04
       objectReference: {fileID: 0}
     - target: {fileID: 7720650823787778007, guid: 81490b9f56d6ab94ab43f024bf6de0e7, type: 3}
       propertyPath: attackRange
-      value: 0
+      value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 7720650823787778007, guid: 81490b9f56d6ab94ab43f024bf6de0e7, type: 3}
       propertyPath: movingSpeed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81490b9f56d6ab94ab43f024bf6de0e7, type: 3}
