@@ -28,6 +28,7 @@ public class LongRangeWeapon : MonoBehaviour
         TimeSinceLastAttack = weaponData.ReloadingTime;
         weaponData.IsReloading = false;
         PlayerAttack.Attack += Attack;
+        EnemyAttack.Attack += Attack;
         PlayerBlock.Block += Block;
     }
 

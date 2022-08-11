@@ -25,6 +25,7 @@ public class ShortRangeWeapon : MonoBehaviour
         weaponData.IsReloading = false;
         TimeSinceLastAttack = weaponData.ReloadingTime;
         PlayerAttack.Attack += Attack;
+        EnemyAttack.Attack += Attack;
         PlayerBlock.Block += Block;
     }
 
