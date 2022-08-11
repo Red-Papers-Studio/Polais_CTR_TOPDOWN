@@ -9,18 +9,20 @@ public class LongRangeWeapon : MonoBehaviour, IWeapon
     [SerializeField]
     public AttackInvoker AttackInvoker;
     public GameObject ammoPrefab;
+
+    private float _timeSinceLastAttack;
     private float TimeSinceLastAttack
     {
-        get => weaponData.timeSinceLastAttack;
+        get => _timeSinceLastAttack;
         set
         {
-            if (weaponData.timeSinceLastAttack >= weaponData.ReloadingTime)
+            if (_timeSinceLastAttack >= weaponData.ReloadingTime)
             {
                 weaponData.IsReloading = false;
             }
             else
             {
-                weaponData.timeSinceLastAttack = value;
+                _timeSinceLastAttack = value;
             }
         }
     }
@@ -43,7 +45,7 @@ public class LongRangeWeapon : MonoBehaviour, IWeapon
         if (CanAttack())
         {
             OnWeaponAttack();
-            weaponData.timeSinceLastAttack = 0;
+            _timeSinceLastAttack = 0;
             weaponData.IsReloading = true;
         }
         else

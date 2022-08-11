@@ -5,18 +5,20 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
     [SerializeField]
     private ShortRangeWeaponData weaponData;
     public AttackInvoker AttackInvoker;
+
+    private float _timeSinceLastAttack;
     private float TimeSinceLastAttack
     {
-        get => weaponData.timeSinceLastAttack;
+        get => _timeSinceLastAttack;
         set
         {
-            if (weaponData.timeSinceLastAttack >= weaponData.ReloadingTime)
+            if (_timeSinceLastAttack >= weaponData.ReloadingTime)
             {
                 weaponData.IsReloading = false;
             }
             else
             {
-                weaponData.timeSinceLastAttack = value;
+                _timeSinceLastAttack = value;
             }
         }
     }
@@ -39,7 +41,7 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
         {
             OnAttack();
             weaponData.IsReloading = true;
-            weaponData.timeSinceLastAttack = 0;
+            _timeSinceLastAttack = 0;
         }
         else
         {

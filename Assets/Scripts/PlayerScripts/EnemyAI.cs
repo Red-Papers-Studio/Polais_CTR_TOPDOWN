@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour
         playerInViewRange = r <  viewRange;
         playerInAttackRange = r < attackRange;
 
-        Debug.Log($"v - {playerInViewRange}  A - {playerInAttackRange}");
+       
         if (playerInViewRange && !playerInAttackRange) MoveToTarget();
 
         if (playerInAttackRange && playerInViewRange) AttackPlayer();
