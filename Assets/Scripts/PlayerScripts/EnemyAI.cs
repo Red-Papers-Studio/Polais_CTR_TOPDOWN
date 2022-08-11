@@ -37,11 +37,12 @@ public class EnemyAI : MonoBehaviour
         if (playerInViewRange && !playerInAttackRange) MoveToTarget();
 
         if (playerInAttackRange && playerInViewRange) AttackPlayer();
+
+        _animator.SetFloat("Speed", Vector3.Distance(navMeshAgent.destination, transform.position));
     }
     private void MoveToTarget() // устанвливает точку движения к цели
     {
         navMeshAgent.SetDestination(Target.transform.position);
-        //animator.SetFloat("Speed", movingSpeed);
         transform.LookAt(Target.transform);
     }
 
