@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2028060019690563274}
-  - component: {fileID: 4195257384477866695}
   - component: {fileID: 7427159425904835441}
   m_Layer: 0
   m_Name: Weapon
@@ -34,18 +33,6 @@ Transform:
   m_Father: {fileID: 7034274889023232275}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4195257384477866695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969361282928822875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8415bf11faca94245b7dc103f33fb151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7427159425904835441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: f0e2bc908902a38419a479c60aefe48a, type: 2}
   ammoSpawnPoint: {fileID: 7542973076523458189}
+  AttackInvoker: {fileID: 456747048189408490}
   ammoPrefab: {fileID: 820901841048133891, guid: 76bb81f240552ed4a8bea85b08fb7d8b, type: 3}
 --- !u!1 &2637335262189840287
 GameObject:
@@ -319,3 +307,33 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   ManaBar: {fileID: 0}
   StaminaBar: {fileID: 0}
+--- !u!114 &456747048189408490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7698080108608635817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8415bf11faca94245b7dc103f33fb151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7720650823787778007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7698080108608635817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680723e23b2050343a86418e335e2158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackInvoker: {fileID: 456747048189408490}
+  movingSpeed: 0
+  viewRange: 0
+  attackRange: 0
+  EnemyEye: {fileID: 0}
+  Target: {fileID: 0}

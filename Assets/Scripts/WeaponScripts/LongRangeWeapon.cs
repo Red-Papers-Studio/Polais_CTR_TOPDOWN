@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class LongRangeWeapon : MonoBehaviour
+public class LongRangeWeapon : MonoBehaviour, IWeapon
 {
     [SerializeField]
     private LongRangeWeaponData weaponData;
     [SerializeField]
     private Transform ammoSpawnPoint;
+    [SerializeField]
+    public AttackInvoker AttackInvoker;
     public GameObject ammoPrefab;
     private float TimeSinceLastAttack
     {
@@ -27,8 +29,7 @@ public class LongRangeWeapon : MonoBehaviour
     {
         TimeSinceLastAttack = weaponData.ReloadingTime;
         weaponData.IsReloading = false;
-        PlayerAttack.Attack += Attack;
-        EnemyAttack.Attack += Attack;
+        AttackInvoker.OnAttack += Attack;
         PlayerBlock.Block += Block;
     }
 
@@ -36,11 +37,8 @@ public class LongRangeWeapon : MonoBehaviour
     {
         TimeSinceLastAttack += Time.deltaTime;
     }
-    private bool CanAttack()
-    {
-        return !weaponData.IsReloading && weaponData.ReloadingTime <= TimeSinceLastAttack;
-    }
-    private void Attack()
+
+    public void Attack()
     {
         if (CanAttack())
         {
@@ -54,16 +52,21 @@ public class LongRangeWeapon : MonoBehaviour
         }
     }
 
+    public void Block()
+    {
+        Debug.Log(weaponData.Name + " blocked in short range with damage " + weaponData.Block);
+    }
+
+    private bool CanAttack()
+    {
+        return !weaponData.IsReloading && weaponData.ReloadingTime <= TimeSinceLastAttack;
+    }
+
     private void OnWeaponAttack()
     {
         var ammo = Instantiate(ammoPrefab, ammoSpawnPoint.position, ammoSpawnPoint.rotation);
 
         ammo.GetComponent<Rigidbody>().velocity = ammoSpawnPoint.transform.forward * weaponData.AmmunationSpeed;
         Debug.Log(weaponData.Name + " attackted in long range with damage " + weaponData.Damage);
-    }
-
-    private void Block()
-    {
-        Debug.Log(weaponData.Name + " blocked in short range with damage " + weaponData.Block);
     }
 }

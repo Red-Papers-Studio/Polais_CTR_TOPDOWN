@@ -38,18 +38,12 @@ public class PlayerMoving : MonoBehaviour
 
     private void Rotation(float moveHorizontal)
     {
-        //Quaternion quaternion =
-        //    Quaternion.Euler(new Vector3(0, moveHorizontal * RotationSpeed, 0) + _rb.rotation.eulerAngles);
-
-        //_rb.MoveRotation(quaternion);
-
         Vector3 Mpos = Input.mousePosition;
         Vector3 pos = Camera.main.ScreenPointToRay(Mpos).direction * 12;
         pos.y = transform.position.y;
         Vector3 coordinate = new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z) + pos;
         test.transform.position = coordinate;
         transform.LookAt(coordinate);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(coordinate), RotationSpeed * Time.deltaTime);
     }
 
     private void Move(float moveVertical, float moveHorizontal, float accelaration)

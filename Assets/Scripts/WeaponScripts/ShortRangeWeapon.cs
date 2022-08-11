@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class ShortRangeWeapon : MonoBehaviour
+public class ShortRangeWeapon : MonoBehaviour, IWeapon
 {
     [SerializeField]
     private ShortRangeWeaponData weaponData;
-
+    public AttackInvoker AttackInvoker;
     private float TimeSinceLastAttack
     {
         get => weaponData.timeSinceLastAttack;
@@ -24,8 +24,7 @@ public class ShortRangeWeapon : MonoBehaviour
     {
         weaponData.IsReloading = false;
         TimeSinceLastAttack = weaponData.ReloadingTime;
-        PlayerAttack.Attack += Attack;
-        EnemyAttack.Attack += Attack;
+        AttackInvoker.OnAttack += Attack;
         PlayerBlock.Block += Block;
     }
 
@@ -34,12 +33,7 @@ public class ShortRangeWeapon : MonoBehaviour
         TimeSinceLastAttack += Time.deltaTime;
     }
 
-    private bool CanAttack()
-    {
-        return !weaponData.IsReloading && TimeSinceLastAttack >= weaponData.ReloadingTime;
-    }
-
-    private void Attack()
+    public void Attack()
     {
         if (CanAttack())
         {
@@ -53,12 +47,18 @@ public class ShortRangeWeapon : MonoBehaviour
         }
     }
 
+    public void Block()
+    {
+        Debug.Log(weaponData.Name + " blocked damage " + weaponData.Block);
+    }
+
+    private bool CanAttack()
+    {
+        return !weaponData.IsReloading && TimeSinceLastAttack >= weaponData.ReloadingTime;
+    }
+
     private void OnAttack()
     {
         Debug.Log(weaponData.Name + " attacked in short range with damage " + weaponData.Damage);
-    }
-    private void Block()
-    {
-        Debug.Log(weaponData.Name + " blocked damage " + weaponData.Block);
     }
 }
