@@ -33,7 +33,6 @@ public class LongRangeWeapon : MonoBehaviour, IWeapon
         weaponData.IsReloading = false;
         AttackInvoker.OnAttack += Attack;
         AttackInvoker.AnimationConfiguration(weaponData);
-        PlayerBlock.Block += Block;
     }
 
     private void Update()
@@ -53,11 +52,6 @@ public class LongRangeWeapon : MonoBehaviour, IWeapon
         {
             Debug.Log($"Reloading...({TimeSinceLastAttack}sec)");
         }
-    }
-
-    public void Block()
-    {
-        Debug.Log(weaponData.Name + " blocked in short range with damage " + weaponData.Block);
     }
 
     private bool CanAttack()
