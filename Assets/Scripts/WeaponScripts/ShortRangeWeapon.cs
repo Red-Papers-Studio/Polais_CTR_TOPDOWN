@@ -57,8 +57,6 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
 
     private void OnAttack()
     {
-        Animator animator = weapon?.GetComponent<Animator>();
-        animator?.SetTrigger("Attack");
         Debug.Log(weaponData.Name + " attacked in short range with damage " + weaponData.Damage);
     }
 

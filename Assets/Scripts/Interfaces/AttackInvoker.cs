@@ -6,6 +6,7 @@ public abstract class AttackInvoker : MonoBehaviour
 {
     public event Action OnAttack;
     protected Animator _animator;
+    public event Action EndAttack;
 
     private void Awake()
     {
@@ -25,5 +26,10 @@ public abstract class AttackInvoker : MonoBehaviour
     protected void CompliteAttack()
     {
         OnAttack?.Invoke();
+    }
+
+    protected virtual void EndAttackAnimation()
+    {
+        EndAttack?.Invoke();
     }
 }

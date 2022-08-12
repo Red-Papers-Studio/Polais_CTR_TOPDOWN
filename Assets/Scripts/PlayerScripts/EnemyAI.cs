@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Animator _animator;
 
-    [SerializeField] private BowmanAttackInvoker _attackInvoker;
+    [SerializeField] private AttackInvoker _attackInvoker;
     [SerializeField] private float movingSpeed;
     [SerializeField] private float viewRange;
     [SerializeField] private float attackRange;
