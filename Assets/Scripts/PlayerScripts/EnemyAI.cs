@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Animator _animator;
 
-    [SerializeField] private EnemyAttackInvoker _attackInvoker;
+    [SerializeField] private BowmanAttackInvoker _attackInvoker;
     [SerializeField] private float movingSpeed;
     [SerializeField] private float viewRange;
     [SerializeField] private float attackRange;
@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     //States
     private bool playerInViewRange = false;
     private bool playerInAttackRange = false;
+    private bool isAttack = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,20 +26,30 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent.speed = movingSpeed;
         navMeshAgent.updateRotation = false;
         _animator = GetComponent<Animator>();
+        
+
+        _attackInvoker.EndAttack += () => isAttack = false;
     }
 
     private void Update()
     {
-        float r = Vector3.Distance(transform.position, Target.transform.position);
-        playerInViewRange = r <  viewRange;
-        playerInAttackRange = r < attackRange;
+        if (!isAttack)
+        {
+            float r = Vector3.Distance(transform.position, Target.transform.position);
+            playerInViewRange = r < viewRange;
+            playerInAttackRange = r < attackRange;
 
-       
-        if (playerInViewRange && !playerInAttackRange) MoveToTarget();
 
-        if (playerInAttackRange && playerInViewRange) AttackPlayer();
+            if (playerInViewRange && !playerInAttackRange) MoveToTarget();
 
-        _animator.SetFloat("Speed", Vector3.Distance(navMeshAgent.destination, transform.position));
+            if (playerInAttackRange && playerInViewRange) AttackPlayer();
+
+            _animator.SetFloat("Speed", Vector3.Distance(navMeshAgent.destination, transform.position));
+        }
+        else
+        {
+            transform.LookAt(Target.transform);
+        }
     }
     private void MoveToTarget() // устанвливает точку движения к цели
     {
@@ -51,7 +62,9 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent.SetDestination(transform.position);
         transform.LookAt(Target.transform);
         _attackInvoker.Attack();
+        isAttack = true;
     }
+
 
     private void OnDrawGizmosSelected()
     {

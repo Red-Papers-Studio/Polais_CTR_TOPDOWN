@@ -291,7 +291,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363244118}
-  - component: {fileID: 363244121}
   - component: {fileID: 363244120}
   - component: {fileID: 363244119}
   m_Layer: 0
@@ -343,20 +342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: f0e2bc908902a38419a479c60aefe48a, type: 2}
   ammoSpawnPoint: {fileID: 31960102}
-  AttackInvoker: {fileID: 363244121}
+  AttackInvoker: {fileID: 1120069276}
   ammoPrefab: {fileID: 820901841048133891, guid: 76bb81f240552ed4a8bea85b08fb7d8b, type: 3}
---- !u!114 &363244121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363244117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4622daa9c51cbe04eb4c6c41e2ef82db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &382962924
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +466,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.3021808, y: 1}
+    m_SensorSize: {x: 1.2024922, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1091,6 +1078,18 @@ CapsuleCollider:
   m_Height: 1.4626288
   m_Direction: 1
   m_Center: {x: -0.004634738, y: 1.163003, z: -0.0056453943}
+--- !u!114 &1120069276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120069267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4622daa9c51cbe04eb4c6c41e2ef82db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1157561392
 GameObject:
   m_ObjectHideFlags: 0

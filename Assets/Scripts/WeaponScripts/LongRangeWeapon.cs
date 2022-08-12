@@ -32,6 +32,7 @@ public class LongRangeWeapon : MonoBehaviour, IWeapon
         TimeSinceLastAttack = weaponData.ReloadingTime;
         weaponData.IsReloading = false;
         AttackInvoker.OnAttack += Attack;
+        AttackInvoker.AnimationConfiguration(weaponData);
         PlayerBlock.Block += Block;
     }
 
