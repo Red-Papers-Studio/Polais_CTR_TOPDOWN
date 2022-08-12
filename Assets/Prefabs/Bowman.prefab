@@ -260,15 +260,22 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Hips'\n\tTransform 'Spine1'\n\tTransform 'Neck'\n\tTransform
-    'RightHandIndex3'\n\tTransform 'RightHandMiddle1'\n\tTransform 'LeftUpLeg'\n\tTransform
-    'RightHandThumb3'\n\tTransform 'RightHandThumb2'\n\tTransform 'RightLeg'\n\tTransform
-    'LeftFoot'\n\tand more ...\n\tFrom animation clip 'Shooting Arrow'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &456747048189408490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7698080108608635817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8415bf11faca94245b7dc103f33fb151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &1108230826965982099
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -307,18 +314,6 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   ManaBar: {fileID: 0}
   StaminaBar: {fileID: 0}
---- !u!114 &456747048189408490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7698080108608635817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8415bf11faca94245b7dc103f33fb151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7720650823787778007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,8 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackInvoker: {fileID: 456747048189408490}
-  movingSpeed: 0
-  viewRange: 0
-  attackRange: 0
-  EnemyEye: {fileID: 0}
+  movingSpeed: 3
+  viewRange: 20
+  attackRange: 6
   Target: {fileID: 0}

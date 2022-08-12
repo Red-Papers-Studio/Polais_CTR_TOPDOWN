@@ -223,6 +223,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d69e9f6fcc6e347b191b04b4925ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7882846615652900530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924783727392564308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680723e23b2050343a86418e335e2158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackInvoker: {fileID: 4471929626911178505}
+  movingSpeed: 3
+  viewRange: 10
+  attackRange: 2
+  Target: {fileID: 0}
 --- !u!4 &7733268459396792046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0df9aead216f2a34cbd4a61ec47778a3, type: 3}
