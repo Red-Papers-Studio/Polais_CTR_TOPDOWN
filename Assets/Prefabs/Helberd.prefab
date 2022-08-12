@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1903434065264608499}
   - component: {fileID: 4272211180001107841}
   - component: {fileID: -5311532094461931614}
-  - component: {fileID: 7138166983954669173}
   m_Layer: 0
   m_Name: Helberd
   m_TagString: Untagged
@@ -113,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: ba3940cc68bf100448368a96f1cb1e1e, type: 2}
-  AttackInvoker: {fileID: 7138166983954669173}
+  AttackInvoker: {fileID: 0}
   weapon: {fileID: 3414140119130544376}
 --- !u!95 &-5311532094461931614
 Animator:
@@ -135,15 +134,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7138166983954669173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3414140119130544376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d69e9f6fcc6e347b191b04b4925ca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

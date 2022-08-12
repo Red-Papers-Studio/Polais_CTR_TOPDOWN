@@ -42,6 +42,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Helberd
       objectReference: {fileID: 0}
+    - target: {fileID: 4272211180001107841, guid: c7f921b7bde504f4485132e078b6307f, type: 3}
+      propertyPath: AttackInvoker
+      value: 
+      objectReference: {fileID: 4471929626911178505}
     - target: {fileID: 8424949495267639488, guid: c7f921b7bde504f4485132e078b6307f, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -86,7 +90,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7138166983954669173, guid: c7f921b7bde504f4485132e078b6307f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7f921b7bde504f4485132e078b6307f, type: 3}
 --- !u!1001 &7843212048445905157
 PrefabInstance:
@@ -206,6 +211,18 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   ManaBar: {fileID: 0}
   StaminaBar: {fileID: 0}
+--- !u!114 &4471929626911178505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924783727392564308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d69e9f6fcc6e347b191b04b4925ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7733268459396792046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0df9aead216f2a34cbd4a61ec47778a3, type: 3}
