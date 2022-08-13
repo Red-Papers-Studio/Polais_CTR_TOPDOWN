@@ -48,7 +48,8 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            transform.LookAt(Target.transform);
+            //Костыль
+            //transform.LookAt(Target.transform);
         }
     }
     private void MoveToTarget() // устанвливает точку движения к цели
