@@ -1,32 +1,29 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
-public class PlayerStats : MonoBehaviour, IDamagable
+public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private Stats Stats;
-    private float _ñurrentHP;
-    private float _ñurrentMana;
-    private float _ñurrentStamina;
+    [SerializeField] private Stats Stats = new Stats(100, 100, 100);
+    [SerializeField] private float _currentHP;
+    [SerializeField] private float _currentMana;
+    [SerializeField] private float _currentStamina;
 
     [SerializeField] private Bar HealthBar;
     [SerializeField] private Bar ManaBar;
     [SerializeField] private Bar StaminaBar;
 
-    private Animator _animator;
-
     public float Hp
     {
         get
         {
-            return _ñurrentHP;
+            return _currentHP;
         }
         set
         {
-            _ñurrentHP = value;
-            HealthBar?.SetValue(value);
+            _currentHP = value;
+            HealthBar.SetValue(value);
 
-            if (_ñurrentHP < 0) _ñurrentHP = 0;
-            if (_ñurrentHP > Stats.HP) _ñurrentHP = Stats.HP;
+            if (_currentHP < 0) _currentHP = 0;
+            if (_currentHP > Stats.HP) _currentHP = Stats.HP;
         }
     }
 
@@ -34,15 +31,15 @@ public class PlayerStats : MonoBehaviour, IDamagable
     {
         get
         {
-            return _ñurrentMana;
+            return _currentMana;
         }
         set
         {
-            _ñurrentMana = value;
-            ManaBar?.SetValue(value);
+            _currentMana = value;
+            ManaBar.SetValue(value);
 
-            if (_ñurrentMana < 0) _ñurrentMana = 0;
-            if (_ñurrentMana > Stats.Mana) _ñurrentMana = Stats.Mana;
+            if (_currentMana < 0) _currentMana = 0;
+            if (_currentMana > Stats.Mana) _currentMana = Stats.Mana;
         }
     }
 
@@ -50,61 +47,30 @@ public class PlayerStats : MonoBehaviour, IDamagable
     {
         get
         {
-            return _ñurrentStamina;
+            return _currentStamina;
         }
         set
         {
-            _ñurrentStamina = value;
-            StaminaBar?.SetValue(value);
+            _currentStamina = value;
+            StaminaBar.SetValue(value);
 
-            if (_ñurrentStamina < 0) _ñurrentStamina = 0;
-            if (_ñurrentStamina > Stats.Stamina) _ñurrentStamina = Stats.Stamina;
+            if (_currentStamina < 0) _currentStamina = 0;
+            if (_currentStamina > Stats.Stamina) _currentStamina = Stats.Stamina;
         }
-    }
-
-    public void Damage(float damage)
-    {
-        Hp -= damage;
-        if (Hp <= 0)
-        {
-            DeadAnimation();
-        }
-        else
-        {
-            StartDamageAnimation();
-        }
-    }
-
-    private void StartDamageAnimation()
-    {
-        _animator.SetBool("IsDamaged", true);
-    }
-
-    private void EndDamageAnimation()
-    {
-        _animator.SetBool("IsDamaged", false);
-        Debug.Log("End animation");
-    }
-
-    private void DeadAnimation()
-    {
-        _animator.SetBool("IsDead", true);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        HealthBar?.SetMaxValue(Stats.HP);
-        ManaBar?.SetMaxValue(Stats.Mana);
-        StaminaBar?.SetMaxValue(Stats.Stamina);
-        HealthBar?.SetValue(Stats.HP);
-        ManaBar?.SetValue(Stats.Mana);
-        StaminaBar?.SetValue(Stats.Stamina);
+        HealthBar.SetMaxValue(Stats.HP);
+        ManaBar.SetMaxValue(Stats.Mana);
+        StaminaBar.SetMaxValue(Stats.Stamina);
+        HealthBar.SetValue(Stats.HP);
+        ManaBar.SetValue(Stats.Mana);
+        StaminaBar.SetValue(Stats.Stamina);
 
-        _ñurrentHP = Stats.HP;
-        _ñurrentMana = Stats.Mana;
-        _ñurrentStamina = Stats.Stamina;
-
-        _animator = GetComponent<Animator>();
+        _currentHP = Stats.HP;
+        _currentMana = Stats.Mana;
+        _currentStamina = Stats.Stamina;
     }
 }
