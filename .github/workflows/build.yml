@@ -1,11 +1,11 @@
 name: Build project
+
 on:
   pull_request:
     branches:
       - master
   workflow_dispatch:
-env:
-  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  
 jobs:
   buildForAllSupportedPlatforms:
     name: Build for ${{ matrix.targetPlatform }}
@@ -13,16 +13,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        projectPath: 
-          - ./
         targetPlatform:
           #- StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           - StandaloneWindows # Build a Windows standalone.
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
           #- StandaloneLinux64 # Build a Linux 64-bit standalone.
-          # iOS # Build an iOS player.
-          - Android # Build an Android .apk standalone app.
-          # WebGL # WebGL.
+          #- iOS # Build an iOS player.
+          #- Android # Build an Android .apk standalone app.
+          #- WebGL # WebGL.
     steps:
       - uses: actions/checkout@v2
         with:
@@ -30,18 +28,15 @@ jobs:
           lfs: true
       - uses: actions/cache@v2
         with:
-          path: ${{ matrix.projectPath }}/Library
-          key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
-          restore-keys: |
-            Library-${{ matrix.projectPath }}-
-            Library-
-      - uses: game-ci/unity-builder@v2.1.0
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      - uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          projectPath: ${{ matrix.projectPath }}
-          unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
       - uses: actions/upload-artifact@v2
         with:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
-
