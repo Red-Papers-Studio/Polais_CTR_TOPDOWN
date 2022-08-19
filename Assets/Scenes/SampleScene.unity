@@ -321,7 +321,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.3933933, y: 1}
+    m_SensorSize: {x: 0.84573, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -338,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426637662}
   m_LocalRotation: {x: 0.22367682, y: -0, z: -0, w: 0.97466344}
-  m_LocalPosition: {x: 2.290871, y: 0.41175544, z: -8.310135}
+  m_LocalPosition: {x: -3.6371274, y: 0.12559193, z: -10.154612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -513,8 +513,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565193073}
-  m_LocalRotation: {x: 0.07898997, y: -0.42101005, z: 0.03683362, w: 0.90285903}
-  m_LocalPosition: {x: -0.5304123, y: 4.0081363, z: -5.2999334}
+  m_LocalRotation: {x: 0.03960735, y: -0.037721813, z: 0.008075602, w: 0.9984704}
+  m_LocalPosition: {x: 4.4064703, y: 4.176472, z: -1.7924604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -522,7 +522,7 @@ Transform:
   - {fileID: 426637664}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 10, y: -50, z: 0}
+  m_LocalEulerAnglesHint: {x: 4.571, y: -4.297, z: 0.755}
 --- !u!1 &824350038
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,8 +983,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186730507}
-  m_LocalRotation: {x: 0.22367682, y: -0.000000029802322, z: 0.0000000037252903, w: 0.97466344}
-  m_LocalPosition: {x: 2.290871, y: 0.41175544, z: -8.310135}
+  m_LocalRotation: {x: 0.22367679, y: 0.0000000037252899, z: 0.0000000017462296, w: 0.97466344}
+  m_LocalPosition: {x: -3.6371274, y: 0.12559193, z: -10.154612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1217,9 +1217,9 @@ MonoBehaviour:
     HP: 100
     Mana: 100
     Stamina: 100
-  "_\u0441urrentHP": 0
-  "_\u0441urrentMana": 0
-  "_\u0441urrentStamina": 0
+  _currentHP: 0
+  _currentMana: 0
+  _currentStamina: 0
   HealthBar: {fileID: 988598793}
   ManaBar: {fileID: 1157561395}
   StaminaBar: {fileID: 2136850857}
