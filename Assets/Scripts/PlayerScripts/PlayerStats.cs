@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, IDamagable
 {
-    [SerializeField] private Stats Stats = new Stats(100, 100, 100);
+    [SerializeField] private Stats Stats;// = new Stats(100, 100, 100);
     [SerializeField] private float _currentHP;
     [SerializeField] private float _currentMana;
     [SerializeField] private float _currentStamina;
@@ -20,7 +20,7 @@ public class PlayerStats : MonoBehaviour
         set
         {
             _currentHP = value;
-            HealthBar.SetValue(value);
+            HealthBar?.SetValue(value);
 
             if (_currentHP < 0) _currentHP = 0;
             if (_currentHP > Stats.HP) _currentHP = Stats.HP;
@@ -36,7 +36,7 @@ public class PlayerStats : MonoBehaviour
         set
         {
             _currentMana = value;
-            ManaBar.SetValue(value);
+            ManaBar?.SetValue(value);
 
             if (_currentMana < 0) _currentMana = 0;
             if (_currentMana > Stats.Mana) _currentMana = Stats.Mana;
@@ -52,22 +52,27 @@ public class PlayerStats : MonoBehaviour
         set
         {
             _currentStamina = value;
-            StaminaBar.SetValue(value);
+            StaminaBar?.SetValue(value);
 
             if (_currentStamina < 0) _currentStamina = 0;
             if (_currentStamina > Stats.Stamina) _currentStamina = Stats.Stamina;
         }
     }
 
+    public void Damage(float damage)
+    {
+        Hp -= damage;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        HealthBar.SetMaxValue(Stats.HP);
-        ManaBar.SetMaxValue(Stats.Mana);
-        StaminaBar.SetMaxValue(Stats.Stamina);
-        HealthBar.SetValue(Stats.HP);
-        ManaBar.SetValue(Stats.Mana);
-        StaminaBar.SetValue(Stats.Stamina);
+        HealthBar?.SetMaxValue(Stats.HP);
+        ManaBar?.SetMaxValue(Stats.Mana);
+        StaminaBar?.SetMaxValue(Stats.Stamina);
+        HealthBar?.SetValue(Stats.HP);
+        ManaBar?.SetValue(Stats.Mana);
+        StaminaBar?.SetValue(Stats.Stamina);
 
         _currentHP = Stats.HP;
         _currentMana = Stats.Mana;

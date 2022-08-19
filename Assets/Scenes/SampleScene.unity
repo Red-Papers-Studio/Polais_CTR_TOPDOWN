@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43736115, g: 0.48514777, b: 0.5654203, a: 1}
+  m_IndirectSpecularColor: {r: 0.43736157, g: 0.48514825, b: 0.56542134, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 363244118}
   - component: {fileID: 363244120}
   - component: {fileID: 363244119}
+  - component: {fileID: 363244121}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -242,7 +243,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 363244117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ae6b175b9eb6044944e7295cdc2d7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4622daa9c51cbe04eb4c6c41e2ef82db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &363244120
@@ -261,6 +262,26 @@ MonoBehaviour:
   ammoSpawnPoint: {fileID: 1891953036}
   AttackInvoker: {fileID: 1120069276}
   ammoPrefab: {fileID: 1428599256910799269, guid: dd2c1cd87c37f3e4987dd2a9980303e2, type: 3}
+--- !u!95 &363244121
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363244117}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &382962924
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +404,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.2506887, y: 1}
+    m_SensorSize: {x: 1.7791127, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -978,6 +999,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stats: {fileID: 11400000, guid: 63f9fc071150ed1479af68e3bc3b1d28, type: 2}
+  _currentHP: 0
+  _currentMana: 0
+  _currentStamina: 0
   HealthBar: {fileID: 988598793}
   ManaBar: {fileID: 1157561395}
   StaminaBar: {fileID: 2136850857}
