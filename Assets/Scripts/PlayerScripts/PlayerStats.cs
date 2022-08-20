@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class PlayerStats : MonoBehaviour, IDamagable
 {
     [SerializeField] private Stats Stats;// = new Stats(100, 100, 100);
@@ -10,6 +11,8 @@ public class PlayerStats : MonoBehaviour, IDamagable
     [SerializeField] private Bar HealthBar;
     [SerializeField] private Bar ManaBar;
     [SerializeField] private Bar StaminaBar;
+
+    private Animator _animator;
 
     public float Hp
     {
@@ -59,11 +62,6 @@ public class PlayerStats : MonoBehaviour, IDamagable
         }
     }
 
-    public void Damage(float damage)
-    {
-        Hp -= damage;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -77,5 +75,36 @@ public class PlayerStats : MonoBehaviour, IDamagable
         _currentHP = Stats.HP;
         _currentMana = Stats.Mana;
         _currentStamina = Stats.Stamina;
+
+        _animator = GetComponent<Animator>();
+    }
+
+    public void Damage(float damage)
+    {
+        Hp -= damage;
+        if (Hp <= 0)
+        {
+            DeadAnimation();
+        }
+        else
+        {
+            StartDamageAnimation();
+        }
+    }
+
+    private void StartDamageAnimation()
+    {
+        _animator.SetBool("IsDamaged", true);
+    }
+
+    private void EndDamageAnimation()
+    {
+        _animator.SetBool("IsDamaged", false);
+        Debug.Log("End animation");
+    }
+
+    private void DeadAnimation()
+    {
+        _animator.SetBool("IsDead", true);
     }
 }
