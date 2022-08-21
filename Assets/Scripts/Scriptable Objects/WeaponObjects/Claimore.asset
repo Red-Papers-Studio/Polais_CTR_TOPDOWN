@@ -17,6 +17,7 @@ MonoBehaviour:
   Block: 300
   Durability: 920
   IsTwoHanded: 1
-  ReloadingTime: 0
-  IsReloading: 0
+  ReloadingTime: 0.4
+  IsReloading: 1
+  timeSinceLastAttack: 1.3218352
   AttackRadius: 0

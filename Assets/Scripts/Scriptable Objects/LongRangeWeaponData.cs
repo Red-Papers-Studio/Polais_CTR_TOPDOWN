@@ -4,5 +4,5 @@ using UnityEngine;
 public class LongRangeWeaponData : WeaponData
 {
     public float AttackRange;
-    public int CurrentAmmunationCount;
+    public float AmmunationSpeed;
 }

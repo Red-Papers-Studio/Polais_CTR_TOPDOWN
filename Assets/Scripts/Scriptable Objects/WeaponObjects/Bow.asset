@@ -18,6 +18,6 @@ MonoBehaviour:
   Durability: 500
   IsTwoHanded: 1
   ReloadingTime: 2
-  IsReloading: 0
+  IsReloading: 1
   AttackRange: 0
-  CurrentAmmunationCount: 10
+  AmmunationSpeed: 20
