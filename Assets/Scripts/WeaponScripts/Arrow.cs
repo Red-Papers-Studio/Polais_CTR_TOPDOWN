@@ -8,7 +8,7 @@ public class Arrow : MonoBehaviour
     private float lifeTime;
     private void OnCollisionEnter(Collision collision)
     {
-        IDamagable target = collision.gameObject.GetComponent<IDamagable>();
+        IDamageable target = collision.gameObject.GetComponent<IDamageable>();
         target?.Damage(weaponData.Damage);
     }
     private void Awake()

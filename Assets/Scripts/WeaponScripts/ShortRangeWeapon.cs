@@ -62,7 +62,7 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
 
     private void OnCollisionEnter(Collision collision)
     {
-        IDamagable target = collision.gameObject.GetComponent<IDamagable>();
+        IDamageable target = collision.gameObject.GetComponent<IDamageable>();
         target?.Damage(weaponData.Damage);
     }
 }
