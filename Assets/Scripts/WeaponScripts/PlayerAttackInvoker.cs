@@ -7,6 +7,7 @@ public class PlayerAttackInvoker : AttackInvoker
     {
         if(Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Attack");
             Attack();
         }
     }
