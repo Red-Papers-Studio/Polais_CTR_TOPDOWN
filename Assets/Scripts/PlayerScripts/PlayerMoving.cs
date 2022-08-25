@@ -51,15 +51,12 @@ public class PlayerMoving : MonoBehaviour
         Vector3 coordinate = pos;
 
         test.transform.position = coordinate;
-        transform.LookAt(coordinate);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(coordinate), RotationSpeed * Time.deltaTime);
+        
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(coordinate - transform.position), RotationSpeed);
     }
 
     private void Move(float moveVertical, float moveHorizontal, float accelaration)
     {
-        moveVertical = moveVertical > 0 ? moveVertical : moveVertical / RunBackReductionCoef;
-        moveHorizontal = moveHorizontal / RunBackReductionCoef;
-
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
 
         if (accelaration < 1)
@@ -94,25 +91,21 @@ public class PlayerMoving : MonoBehaviour
         {
             _animator.SetFloat("Speed", speed);
             _animator.SetFloat("HorizontalSpeed", horizontalSpeed);
-            Debug.Log($"{transform.rotation.y} Up");
         }
         else if (angle > RigthUpEdge && angle < RigthDownEdge)
         {
             _animator.SetFloat("Speed", horizontalSpeed * 10);
             _animator.SetFloat("HorizontalSpeed", -speed);
-            Debug.Log($"{transform.rotation.y} Rigth");
         }
         else if (angle > RigthDownEdge && angle < 1 || angle < LeftDownEdge)
         {
             _animator.SetFloat("Speed", -speed);
             _animator.SetFloat("HorizontalSpeed", -horizontalSpeed);
-            Debug.Log($"{transform.rotation.y} Down");
         }
         else if (angle > LeftDownEdge && angle < LeftUpEdge)
         {
             _animator.SetFloat("Speed", -horizontalSpeed *10);
             _animator.SetFloat("HorizontalSpeed", speed);
-            Debug.Log($"{transform.rotation.y} Left");
         }
     }
 }
