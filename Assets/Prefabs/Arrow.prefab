@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: f0e2bc908902a38419a479c60aefe48a, type: 2}
-  lifeTime: 5
+  lifeTime: 4
 --- !u!1 &1572615552061331537
 GameObject:
   m_ObjectHideFlags: 0

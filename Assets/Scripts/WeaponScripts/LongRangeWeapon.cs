@@ -64,6 +64,5 @@ public class LongRangeWeapon : MonoBehaviour, IWeapon
         var ammo = Instantiate(ammoPrefab, ammoSpawnPoint.position, ammoSpawnPoint.rotation);
 
         ammo.GetComponent<Rigidbody>().velocity = ammoSpawnPoint.transform.forward * weaponData.AmmunationSpeed;
-        Debug.Log(weaponData.Name + " attackted in long range with damage " + weaponData.Damage);
     }
 }

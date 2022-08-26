@@ -6,8 +6,8 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
     private ShortRangeWeaponData weaponData;
     public AttackInvoker AttackInvoker;
 
-    [SerializeField]
-    private GameObject weapon;
+    //[SerializeField]
+    //private GameObject weapon;
     private float _timeSinceLastAttack;
     private float TimeSinceLastAttack
     {
