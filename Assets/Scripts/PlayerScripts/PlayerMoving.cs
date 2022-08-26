@@ -94,25 +94,21 @@ public class PlayerMoving : MonoBehaviour
         {
             _animator.SetFloat("Speed", speed);
             _animator.SetFloat("HorizontalSpeed", horizontalSpeed);
-            Debug.Log($"{transform.rotation.y} Up");
         }
         else if (angle > RigthUpEdge && angle < RigthDownEdge)
         {
             _animator.SetFloat("Speed", horizontalSpeed * 10);
             _animator.SetFloat("HorizontalSpeed", -speed);
-            Debug.Log($"{transform.rotation.y} Rigth");
         }
         else if (angle > RigthDownEdge && angle < 1 || angle < LeftDownEdge)
         {
             _animator.SetFloat("Speed", -speed);
             _animator.SetFloat("HorizontalSpeed", -horizontalSpeed);
-            Debug.Log($"{transform.rotation.y} Down");
         }
         else if (angle > LeftDownEdge && angle < LeftUpEdge)
         {
             _animator.SetFloat("Speed", -horizontalSpeed *10);
             _animator.SetFloat("HorizontalSpeed", speed);
-            Debug.Log($"{transform.rotation.y} Left");
         }
     }
 }

@@ -48,10 +48,6 @@ public class LongRangeWeapon : MonoBehaviour, IWeapon
             _timeSinceLastAttack = 0;
             weaponData.IsReloading = true;
         }
-        else
-        {
-            Debug.Log($"Reloading...({TimeSinceLastAttack}sec)");
-        }
     }
 
     private bool CanAttack()

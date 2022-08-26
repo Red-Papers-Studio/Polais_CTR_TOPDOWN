@@ -40,24 +40,14 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
     {
         if (CanAttack())
         {
-            OnAttack();
             weaponData.IsReloading = true;
             _timeSinceLastAttack = 0;
-        }
-        else
-        {
-            Debug.Log($"Reloading...({TimeSinceLastAttack})");
         }
     }
 
     private bool CanAttack()
     {
         return !weaponData.IsReloading && TimeSinceLastAttack >= weaponData.ReloadingTime;
-    }
-
-    private void OnAttack()
-    {
-        Debug.Log(weaponData.Name + " attacked in short range with damage " + weaponData.Damage);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -8,7 +8,6 @@ public class GuardAttackInvoker : AttackInvoker
     public override void Attack()
     {
         _attackNumber = _random.Next(0, 100);
-        Debug.Log(_attackNumber);
         if (_attackNumber <= 70) _animator.SetBool("SimpleAttack", true);
         else _animator.SetBool("HightAttack", true);
     }
