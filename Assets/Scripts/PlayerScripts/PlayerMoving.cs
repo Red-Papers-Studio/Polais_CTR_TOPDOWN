@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PlayerStats))]
 public class PlayerMoving : MonoBehaviour
@@ -14,16 +14,16 @@ public class PlayerMoving : MonoBehaviour
     [SerializeField] private float StaminaCostPerFrame = 2f;
     [SerializeField] private PlayerStats Stats;
 
-    private Rigidbody _rb;
+    private CharacterController _characterController;
     private Animator _animator;
-    // Start is called before the first frame update
+
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
+        _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+        _animator.applyRootMotion = true;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -51,7 +51,7 @@ public class PlayerMoving : MonoBehaviour
         Vector3 coordinate = pos;
 
         test.transform.position = coordinate;
-        
+
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(coordinate - transform.position), RotationSpeed);
     }
 
@@ -74,11 +74,15 @@ public class PlayerMoving : MonoBehaviour
             }
         }
 
-        _rb.AddForce(movement * Speed * accelaration);
-
         Animation(Speed * accelaration * moveVertical, moveHorizontal);
     }
 
+    private void OnAnimatorMove()
+    {
+        Vector3 velocity = _animator.deltaPosition;
+
+        _characterController.Move(velocity);
+    }
     private void Animation(float speed, float horizontalSpeed)
     {
         float angle = transform.rotation.y;
@@ -104,7 +108,7 @@ public class PlayerMoving : MonoBehaviour
         }
         else if (angle > LeftDownEdge && angle < LeftUpEdge)
         {
-            _animator.SetFloat("Speed", -horizontalSpeed *10);
+            _animator.SetFloat("Speed", -horizontalSpeed * 10);
             _animator.SetFloat("HorizontalSpeed", speed);
         }
     }
