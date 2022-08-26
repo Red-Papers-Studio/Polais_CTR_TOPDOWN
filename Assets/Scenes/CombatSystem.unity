@@ -275,6 +275,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80909178}
   m_CullTransparentMesh: 1
+--- !u!1 &97351108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4021194027920340882, guid: f102a07794081524f8cbe2961babc2a2, type: 3}
+  m_PrefabInstance: {fileID: 7355639069978752596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &97351112
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97351108}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &108672044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,7 +2899,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7756411, y: 1}
+    m_SensorSize: {x: 1.781768, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3125,6 +3146,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5142785409182851157, guid: 7fc210bf4e89a5543bc9cf6d2d4b1b19, type: 3}
   m_PrefabInstance: {fileID: 1719942012}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &2010687504
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010687500}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &2013004731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3322,6 +3359,10 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 840284723}
+    - target: {fileID: 936696456491463058, guid: f102a07794081524f8cbe2961babc2a2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1072985992794579096, guid: f102a07794081524f8cbe2961babc2a2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.120013125

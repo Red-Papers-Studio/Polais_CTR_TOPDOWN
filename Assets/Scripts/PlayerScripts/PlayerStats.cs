@@ -10,6 +10,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
     [SerializeField] private Bar ManaBar;
     [SerializeField] private Bar StaminaBar;
 
+    private Animator _animator;
+
     public float Hp
     {
         get
@@ -23,6 +25,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
             if (_currentHP < 0) _currentHP = 0;
             if (_currentHP > Stats.HP) _currentHP = Stats.HP;
+            if (_currentHP <= 0) _animator.SetBool("IsDead", true);
         }
     }
 
@@ -55,6 +58,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
             if (_currentStamina < 0) _currentStamina = 0;
             if (_currentStamina > Stats.Stamina) _currentStamina = Stats.Stamina;
+            
         }
     }
 
@@ -64,7 +68,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         HealthBar?.SetMaxValue(Stats.HP);
         ManaBar?.SetMaxValue(Stats.Mana);
@@ -76,5 +80,9 @@ public class PlayerStats : MonoBehaviour, IDamageable
         _currentHP = Stats.HP;
         _currentMana = Stats.Mana;
         _currentStamina = Stats.Stamina;
+
+        _animator = GetComponent<Animator>();
     }
+
+    public void EndDeadAnimation() => _animator.SetBool("IsDead", false);
 }
