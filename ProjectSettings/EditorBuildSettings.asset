@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/NewMoving.unity
+    guid: 0cd14a08a11d4f847b28e8ecee0ded9e
+  - enabled: 1
     path: Assets/Scenes/FastRotationFix.unity
     guid: 52a792f267571f84cb387e0476e15af7
   - enabled: 1
