@@ -8,10 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombatSystem.unity
     guid: 8f523b34a397fe44baac1f8193ec4dd3
-  - enabled: 1
-    path: Assets/Scenes/FastRotationFix.unity
-    guid: 52a792f267571f84cb387e0476e15af7
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 93d8c6a318fbf2947a90bb1885621e8f
   m_configObjects: {}
