@@ -6,8 +6,8 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
     private ShortRangeWeaponData weaponData;
     public AttackInvoker AttackInvoker;
 
-    [SerializeField]
-    private GameObject weapon;
+    //[SerializeField]
+    //private GameObject weapon;
     private float _timeSinceLastAttack;
     private float TimeSinceLastAttack
     {
@@ -40,13 +40,8 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
     {
         if (CanAttack())
         {
-            OnAttack();
             weaponData.IsReloading = true;
             _timeSinceLastAttack = 0;
-        }
-        else
-        {
-            Debug.Log($"Reloading...({TimeSinceLastAttack})");
         }
     }
 
@@ -55,14 +50,13 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
         return !weaponData.IsReloading && TimeSinceLastAttack >= weaponData.ReloadingTime;
     }
 
-    private void OnAttack()
-    {
-        Debug.Log(weaponData.Name + " attacked in short range with damage " + weaponData.Damage);
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        IDamageable target = collision.gameObject.GetComponent<IDamageable>();
-        target?.Damage(weaponData.Damage);
+        //IDamageable target = collision.gameObject.GetComponent<IDamageable>();
+        if(collision.gameObject.TryGetComponent<IDamageable>(out IDamageable target))
+        {
+            Debug.Log(weaponData.name + " damage");
+            target.Damage(weaponData.Damage);
+        }
     }
 }

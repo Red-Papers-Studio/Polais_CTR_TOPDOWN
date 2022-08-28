@@ -206,10 +206,10 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428599256910799269}
   serializedVersion: 2
-  m_Mass: 0.01
+  m_Mass: 0.0001
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: f0e2bc908902a38419a479c60aefe48a, type: 2}
-  lifeTime: 5
+  lifeTime: 4
 --- !u!1 &1572615552061331537
 GameObject:
   m_ObjectHideFlags: 0

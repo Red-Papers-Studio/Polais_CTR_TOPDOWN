@@ -48,10 +48,6 @@ public class LongRangeWeapon : MonoBehaviour, IWeapon
             _timeSinceLastAttack = 0;
             weaponData.IsReloading = true;
         }
-        else
-        {
-            Debug.Log($"Reloading...({TimeSinceLastAttack}sec)");
-        }
     }
 
     private bool CanAttack()
@@ -64,6 +60,5 @@ public class LongRangeWeapon : MonoBehaviour, IWeapon
         var ammo = Instantiate(ammoPrefab, ammoSpawnPoint.position, ammoSpawnPoint.rotation);
 
         ammo.GetComponent<Rigidbody>().velocity = ammoSpawnPoint.transform.forward * weaponData.AmmunationSpeed;
-        Debug.Log(weaponData.Name + " attackted in long range with damage " + weaponData.Damage);
     }
 }
