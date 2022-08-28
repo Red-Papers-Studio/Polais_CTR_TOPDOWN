@@ -1,29 +1,26 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PlayerStats))]
 public class PlayerMoving : MonoBehaviour
 {
     [SerializeField] private GameObject test;
-    [SerializeField] private float Speed = 10f;
     [SerializeField] private float RotationSpeed = 3f;
-    [SerializeField] private float RunBackReductionCoef = 2f;
-    [SerializeField] private float AccelarationMultiplyCoef = 2f;
 
     [SerializeField] private float StaminaCostPerFrame = 2f;
     [SerializeField] private PlayerStats Stats;
 
-    private Rigidbody _rb;
+    private CharacterController _characterController;
     private Animator _animator;
-    // Start is called before the first frame update
+
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
+        _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+        _animator.applyRootMotion = true;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -36,11 +33,6 @@ public class PlayerMoving : MonoBehaviour
 
     private void Rotation(float moveHorizontal)
     {
-        //Quaternion quaternion =
-        //    Quaternion.Euler(new Vector3(0, moveHorizontal * RotationSpeed, 0) + _rb.rotation.eulerAngles);
-
-        //_rb.MoveRotation(quaternion);
-
         Vector3 Mpos = Input.mousePosition;
         Ray mouseRay = Camera.main.ScreenPointToRay(Mpos);
         RaycastHit hit;
@@ -51,34 +43,35 @@ public class PlayerMoving : MonoBehaviour
         Vector3 coordinate = pos;
 
         test.transform.position = coordinate;
-        
+
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(coordinate - transform.position), RotationSpeed);
     }
 
     private void Move(float moveVertical, float moveHorizontal, float accelaration)
     {
-        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
-
         if (accelaration < 1)
         {
             accelaration = 1;
-            //������������� ������� ������ ���� ��� ����
-            Stats.Stamina += StaminaCostPerFrame / 10;
+            Stats.Stamina += StaminaCostPerFrame;
         }
         else
         {
             if (Stats.Stamina > 0)
             {
                 Stats.Stamina -= StaminaCostPerFrame;
-                accelaration *= AccelarationMultiplyCoef;
+                accelaration = 2;
             }
         }
 
-        _rb.AddForce(movement * Speed * accelaration);
-
-        Animation(Speed * accelaration * moveVertical, moveHorizontal);
+        Animation(moveVertical * accelaration, moveHorizontal * accelaration);
     }
 
+    private void OnAnimatorMove()
+    {
+        Vector3 velocity = _animator.deltaPosition;
+
+        _characterController.Move(velocity);
+    }
     private void Animation(float speed, float horizontalSpeed)
     {
         float angle = transform.rotation.y;
@@ -94,7 +87,7 @@ public class PlayerMoving : MonoBehaviour
         }
         else if (angle > RigthUpEdge && angle < RigthDownEdge)
         {
-            _animator.SetFloat("Speed", horizontalSpeed * 10);
+            _animator.SetFloat("Speed", horizontalSpeed);
             _animator.SetFloat("HorizontalSpeed", -speed);
         }
         else if (angle > RigthDownEdge && angle < 1 || angle < LeftDownEdge)
@@ -104,7 +97,7 @@ public class PlayerMoving : MonoBehaviour
         }
         else if (angle > LeftDownEdge && angle < LeftUpEdge)
         {
-            _animator.SetFloat("Speed", -horizontalSpeed *10);
+            _animator.SetFloat("Speed", -horizontalSpeed);
             _animator.SetFloat("HorizontalSpeed", speed);
         }
     }
