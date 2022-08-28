@@ -51,15 +51,12 @@ public class PlayerMoving : MonoBehaviour
         Vector3 coordinate = pos;
 
         test.transform.position = coordinate;
-        transform.LookAt(coordinate);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(coordinate), RotationSpeed * Time.deltaTime);
+        
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(coordinate - transform.position), RotationSpeed);
     }
 
     private void Move(float moveVertical, float moveHorizontal, float accelaration)
     {
-        moveVertical = moveVertical > 0 ? moveVertical : moveVertical / RunBackReductionCoef;
-        moveHorizontal = moveHorizontal / RunBackReductionCoef;
-
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
 
         if (accelaration < 1)

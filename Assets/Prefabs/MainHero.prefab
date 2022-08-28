@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   test: {fileID: 0}
   Speed: 10
-  RotationSpeed: 3
+  RotationSpeed: 5
   RunBackReductionCoef: 2
   AccelarationMultiplyCoef: 3
   StaminaCostPerFrame: 2
