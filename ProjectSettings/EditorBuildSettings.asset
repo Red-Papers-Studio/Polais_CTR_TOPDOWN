@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CombatSystem.unity
-    guid: 8f523b34a397fe44baac1f8193ec4dd3
-  - enabled: 1
     path: Assets/Scenes/FastRotationFix.unity
     guid: 52a792f267571f84cb387e0476e15af7
   - enabled: 1

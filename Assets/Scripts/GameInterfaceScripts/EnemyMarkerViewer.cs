@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -11,21 +13,21 @@ public class EnemyMarkerViewer : MonoBehaviour
     {
         _collider = GetComponent<Collider>();
         _marker = Instantiate(_marker, transform.position + _offset, transform.rotation, transform);
-        //_marker.SetActive(false);
+        _marker.SetActive(false);
     }
-    //private void FixedUpdate()
-    //{
-    //    Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-    //    RaycastHit hit = new RaycastHit();
-    //    Physics.Raycast(mouseRay, out hit);
+    private void FixedUpdate()
+    {
+        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit = new RaycastHit();
+        Physics.Raycast(mouseRay, out hit);
 
-    //    if (hit.collider == _collider)
-    //    {
-    //        _marker.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        _marker.SetActive(false);
-    //    }
-    //}
+        if (hit.collider == _collider)
+        {
+            _marker.SetActive(true);
+        }
+        else
+        {
+            _marker.SetActive(false);
+        }
+    }
 }
