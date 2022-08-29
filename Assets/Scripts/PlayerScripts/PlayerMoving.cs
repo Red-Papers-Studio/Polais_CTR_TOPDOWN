@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMoving : MonoBehaviour
 {
     [SerializeField] private GameObject test;
+    [SerializeField] private Transform bowTarget;
     [SerializeField] private float RotationSpeed = 3f;
 
     [SerializeField] private float StaminaCostPerFrame = 2f;
@@ -14,11 +15,14 @@ public class PlayerMoving : MonoBehaviour
     private CharacterController _characterController;
     private Animator _animator;
 
+    public bool isArrowAttack;
+
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
         _animator.applyRootMotion = true;
+        isArrowAttack = false;
     }
 
     void FixedUpdate()
@@ -40,11 +44,20 @@ public class PlayerMoving : MonoBehaviour
 
         Vector3 pos = hit.point;
         pos.y = transform.position.y;
+
         Vector3 coordinate = pos;
 
         test.transform.position = coordinate;
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(coordinate - transform.position), RotationSpeed);
+        if (isArrowAttack)
+        {
+            Vector3 direction = bowTarget.transform.position - transform.position;
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
+        else
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(coordinate - transform.position), RotationSpeed);
+        }    
     }
 
     private void Move(float moveVertical, float moveHorizontal, float accelaration)
