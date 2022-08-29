@@ -52,7 +52,8 @@ public class PlayerMoving : MonoBehaviour
         if (isArrowAttack)
         {
             Vector3 direction = bowTarget.transform.position - transform.position;
-            transform.rotation = Quaternion.LookRotation(direction);
+            //transform.rotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), RotationSpeed);
         }
         else
         {

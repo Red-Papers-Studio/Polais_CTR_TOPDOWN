@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class SwordsmanAttackInvoker : PlayerAttackInvoker
 {
     public override void Attack()
