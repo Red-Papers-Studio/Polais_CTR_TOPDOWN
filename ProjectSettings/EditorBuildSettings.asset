@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/EquipmentChangeAnimationFixScene.unity
+    guid: 16737c9a62e06714bae66c828d060aac
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8f523b34a397fe44baac1f8193ec4dd3
   m_configObjects: {}
