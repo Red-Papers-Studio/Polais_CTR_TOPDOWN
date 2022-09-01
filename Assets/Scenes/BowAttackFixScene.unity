@@ -1954,7 +1954,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1469295355
@@ -3353,7 +3353,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.776316, y: 1}
+    m_SensorSize: {x: 1.7769679, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
