@@ -9,6 +9,9 @@ public class PlayerMoving : MonoBehaviour
     [SerializeField] private Transform bowTarget;
     [SerializeField] private float RotationSpeed = 3f;
 
+    [Range(0, 1)]
+    [SerializeField] private float MoveSpeedShangePerFrame = 0.05f;
+
     [SerializeField] private float StaminaCostPerFrame = 2f;
     [SerializeField] private PlayerStats Stats;
 
@@ -94,25 +97,37 @@ public class PlayerMoving : MonoBehaviour
         float LeftDownEdge = -0.9f;
         float RigthDownEdge = 0.9f;
 
-        if (angle > LeftUpEdge && angle < RigthUpEdge)
+        float vSpeed = 0;
+        float hSpeed = 0;
+
+        
+        if (angle > LeftUpEdge && angle <= RigthUpEdge)
         {
-            _animator.SetFloat("Speed", speed);
-            _animator.SetFloat("HorizontalSpeed", horizontalSpeed);
+            vSpeed = speed;
+            hSpeed = horizontalSpeed;
         }
-        else if (angle > RigthUpEdge && angle < RigthDownEdge)
+        else if (angle > RigthUpEdge && angle <= RigthDownEdge)
         {
-            _animator.SetFloat("Speed", horizontalSpeed);
-            _animator.SetFloat("HorizontalSpeed", -speed);
+            vSpeed = horizontalSpeed;
+            hSpeed = -speed;
         }
-        else if (angle > RigthDownEdge && angle < 1 || angle < LeftDownEdge)
+        else if (angle > RigthDownEdge && angle < 1 || angle <= LeftDownEdge)
         {
-            _animator.SetFloat("Speed", -speed);
-            _animator.SetFloat("HorizontalSpeed", -horizontalSpeed);
+
+            vSpeed = -speed;
+            hSpeed = -horizontalSpeed;
         }
-        else if (angle > LeftDownEdge && angle < LeftUpEdge)
+        else if (angle > LeftDownEdge && angle <= LeftUpEdge)
         {
-            _animator.SetFloat("Speed", -horizontalSpeed);
-            _animator.SetFloat("HorizontalSpeed", speed);
+            vSpeed = -horizontalSpeed;
+            hSpeed = speed;
         }
+
+        Vector2 currentSpeed = new Vector2(_animator.GetFloat("Speed"), _animator.GetFloat("HorizontalSpeed"));
+        Vector2 targetSpeed = new Vector2(vSpeed, hSpeed);
+        Vector2 movement = Vector2.MoveTowards(currentSpeed, targetSpeed, 0.05f);
+
+        _animator.SetFloat("Speed", movement.x);
+        _animator.SetFloat("HorizontalSpeed", movement.y);
     }
 }
