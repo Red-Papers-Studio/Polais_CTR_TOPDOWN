@@ -1145,6 +1145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackInvoker: {fileID: 456747048189408490}
   movingSpeed: 3
-  viewRange: 20
+  viewRange: 12
   attackRange: 6
   Target: {fileID: 0}

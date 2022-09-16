@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackInvoker: {fileID: 4471929626911178505}
   movingSpeed: 3
-  viewRange: 10
+  viewRange: 8
   attackRange: 2
   Target: {fileID: 0}
 --- !u!4 &7733268459396792046 stripped
