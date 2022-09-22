@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/EnvironmentPOL-91.unity
-    guid: 3b6e692e43556164681e549f0e220592
-  - enabled: 1
     path: Assets/Scenes/Environment.unity
     guid: 4c51b2daa7ea2f14f9812b8a6644c6e0
   - enabled: 1
