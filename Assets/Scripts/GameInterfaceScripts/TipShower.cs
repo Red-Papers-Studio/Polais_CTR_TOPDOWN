@@ -13,10 +13,10 @@ public class TipShower : MonoBehaviour
         if(!(Input.GetAxis("TipShow") < 1))
         {
             _tipObject.SetActive(true);
-            _textObject.text = "WASD или стрелочки - перемещение\n" +
-                           "Space или F - ускорение\n" +
-                           "Q - смена оружия\n" +
-                           "ЛКМ - Атака";
+            _textObject.text = "WASD - Movement\n" +
+                           "Space or F - Acceleration\n" +
+                           "Q - Weapon change\n" +
+                           "Mouse0 - Attack";
 
             _isActive = true;
         }
@@ -24,7 +24,7 @@ public class TipShower : MonoBehaviour
         {
             if(!_isActive)
             {
-                _textObject.text = "Нажмите на TAB для подсказки.";
+                _textObject.text = "Press TAB for a tips";
             }
             else
             {
