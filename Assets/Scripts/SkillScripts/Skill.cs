@@ -7,21 +7,20 @@ public abstract class Skill : MonoBehaviour
     [SerializeField] private SkillData _skillData;
     [SerializeField] private AttackInvoker _attackInvoker;
 
-    private float _lastAttackTime;
-
     private void Start()
     {
+        _view.Init(_skillData);
         _attackInvoker.OnAttack += OnAttackHandle;
     }
     protected abstract void AttackAction(SkillData skillData);
 
     private void OnAttackHandle()
     {
-        if (_lastAttackTime - Time.time < _skillData.CD)
+        if (_view.isReloaded == true)
         {
             AttackAction(_skillData);
-            _view.StartReloading(_skillData.CD);
-            _lastAttackTime = Time.time;
+            _view.isReloaded = false;
+            _view.StartReloading();
         }
     }
 }
