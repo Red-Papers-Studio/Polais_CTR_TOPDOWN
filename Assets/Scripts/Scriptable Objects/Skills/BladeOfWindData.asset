@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4d297a446f482428fcdef75162018a, type: 3}
   m_Name: BladeOfWindData
   m_EditorClassIdentifier: 
-  Damage: 0
-  CritChance: 0
-  CritScale: 0
-  ManaCost: 0
-  CD: 0
-  CastTime: 0
+  Damage: 550
+  CritChance: 0.23
+  CritScale: 2
+  ManaCost: 140
+  CD: 2
+  CastTime: 1.7
