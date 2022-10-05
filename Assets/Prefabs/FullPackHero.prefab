@@ -408,8 +408,27 @@ PrefabInstance:
       propertyPath: _weapon
       value: 
       objectReference: {fileID: 7327408191880391181}
+    - target: {fileID: 7124045979969674969, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
+      propertyPath: _skills.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124045979969674969, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
+      propertyPath: _skills.Array.data[0]
+      value: 
+      objectReference: {fileID: 2853240212392824999}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
+--- !u!114 &2853240212392824999 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4767218771367053773, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
+  m_PrefabInstance: {fileID: 7327408192921573738}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a6fe40c8175e94da2d0897e1804ae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &9023940930738905303 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1768600303062251965, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}

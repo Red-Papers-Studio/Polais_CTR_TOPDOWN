@@ -8,7 +8,7 @@ public class SkillView : MonoBehaviour
     private SkillData _skillData;
 
     public bool isReloaded = true;
-    private float _timeSinceLastCast;
+    private float _timeSinceLastCast = 0;
     private void Start()
     {
         _slider.value = 0;

@@ -7,16 +7,14 @@ public abstract class Skill : MonoBehaviour
 
     [SerializeField] private SkillView _view;
     [SerializeField] private SkillData _skillData;
-    [SerializeField] private SkillsAttackInvoker _attackInvoker;
 
-    private void Start()
+    private void Awake()
     {
         _view.Init(_skillData);
-        _attackInvoker.OnAttack += OnAttackHandle;
     }
     protected abstract void AttackAction(SkillData skillData);
 
-    private void OnAttackHandle(int id)
+    public void OnAttackHandle(int id)
     {
         if (_view.isReloaded == true && id == Id)
         {
