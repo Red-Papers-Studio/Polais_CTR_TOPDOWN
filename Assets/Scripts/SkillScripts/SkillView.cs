@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +23,7 @@ public class SkillView : MonoBehaviour
     public void Init(SkillData skillData)
     {
         _skillData = skillData;
+        _image.sprite = skillData.Sprite;
     }
 
     public void StartReloading()

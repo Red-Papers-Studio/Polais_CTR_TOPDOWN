@@ -3,9 +3,11 @@ using UnityEngine.UI;
 
 public abstract class Skill : MonoBehaviour
 {
+    [HideInInspector]public int Id;
+
     [SerializeField] private SkillView _view;
     [SerializeField] private SkillData _skillData;
-    [SerializeField] private AttackInvoker _attackInvoker;
+    [SerializeField] private SkillsAttackInvoker _attackInvoker;
 
     private void Start()
     {
@@ -14,9 +16,9 @@ public abstract class Skill : MonoBehaviour
     }
     protected abstract void AttackAction(SkillData skillData);
 
-    private void OnAttackHandle()
+    private void OnAttackHandle(int id)
     {
-        if (_view.isReloaded == true)
+        if (_view.isReloaded == true && id == Id)
         {
             AttackAction(_skillData);
             _view.isReloaded = false;

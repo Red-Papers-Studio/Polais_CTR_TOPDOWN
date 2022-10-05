@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4d297a446f482428fcdef75162018a, type: 3}
   m_Name: FireArrowData
   m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 2352faa487e044f49a3fd1973adb7800, type: 3}
   Damage: 670
   CritChance: 0.17
   CritScale: 2.5

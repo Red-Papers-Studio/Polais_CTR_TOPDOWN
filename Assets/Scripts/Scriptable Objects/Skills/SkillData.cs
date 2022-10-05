@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "Skills/BaseSkillData")]
 public class SkillData : ScriptableObject
 {
+    public Sprite Sprite;
+
     [Header("Info")]
     public float Damage;
 
