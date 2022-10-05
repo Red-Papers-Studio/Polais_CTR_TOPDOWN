@@ -7,7 +7,6 @@ namespace Assets.Scripts.SkillScripts
         [SerializeField] private Transform _target;
         [SerializeField] private Transform _spawnTransform;
         [SerializeField] private GameObject _windObject;
-        [SerializeField] private SkillData _skillData;
         [SerializeField] private float _windSpeed;
 
         private void Start()

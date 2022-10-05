@@ -38,7 +38,7 @@ public class SkillView : MonoBehaviour
         if (_timeSinceLastCast < _skillData.CD)
         {
             _timeSinceLastCast += Time.deltaTime;
-            _slider.value -= _slider.value / _skillData.CD * Time.deltaTime;
+            _slider.value -= _slider.maxValue / _skillData.CD * Time.deltaTime;
         }
         else
             isReloaded = true;
