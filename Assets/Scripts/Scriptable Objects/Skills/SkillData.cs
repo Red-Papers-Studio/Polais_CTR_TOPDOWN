@@ -1,12 +1,13 @@
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Skills/BaseSkillData")]
 public class SkillData : ScriptableObject
 {
     [Header("Info")]
     public float Damage;
 
     [Range(0f, 1f)]
-    public int CritChance;
+    public float CritChance;
 
     public float CritScale;
     public float ManaCost;
