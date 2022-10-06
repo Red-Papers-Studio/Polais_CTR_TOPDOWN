@@ -2,16 +2,22 @@ using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    [SerializeField] private GameObject _firstWeapon;
-    [SerializeField] private GameObject _secondWeapon;
+    [SerializeField] private ShortRangeWeapon _firstWeapon;
+    [SerializeField] private LongRangeWeapon _secondWeapon;
+
+    public bool IsFirstWeapon { get; private set; }
+    public bool IsSecondWeapon { get; private set; }
+    public ShortRangeWeapon FirstWeapon { get => _firstWeapon; }
+    public LongRangeWeapon SecondWeapon { get => _secondWeapon; }
+
     private Animator _animator;
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _secondWeapon.SetActive(false);
-        _animator.SetBool("IsFirstWeapon", true);
-        _animator.SetBool("IsSecondWeapon", false);
+        IsFirstWeapon = true;
+        IsSecondWeapon = false;
+        SetParamsInAnimator();
     }
 
     // Update is called once per frame
@@ -25,21 +31,26 @@ public class WeaponSwitcher : MonoBehaviour
 
     public void SwitchWeapon()
     {
-        if(_firstWeapon.activeInHierarchy)
+        if(_firstWeapon.gameObject.activeInHierarchy)
         {
-            _animator.SetBool("IsFirstWeapon", false);
-            _animator.SetBool("IsSecondWeapon", true);
-            _firstWeapon.SetActive(false);
-            _secondWeapon.SetActive(true);
+            IsFirstWeapon = false;
+            IsSecondWeapon = true;
+            SetParamsInAnimator();
         }
         else
         {
-            _animator.SetBool("IsFirstWeapon", true);
-            _animator.SetBool("IsSecondWeapon", false);
-            _secondWeapon.SetActive(false);
-            _firstWeapon.SetActive(true);
+            IsFirstWeapon = true;
+            IsSecondWeapon = false;
+            SetParamsInAnimator();
         }
     }
 
+    private void SetParamsInAnimator()
+    {
+        _animator.SetBool("IsFirstWeapon", IsFirstWeapon);
+        _animator.SetBool("IsSecondWeapon", IsSecondWeapon);
+        _firstWeapon.gameObject.SetActive(IsFirstWeapon);
+        _secondWeapon.gameObject.SetActive(IsSecondWeapon);
+    }
     public void EndWeaponSwitch() => _animator.SetBool("WeaponSwitch", false);
 }

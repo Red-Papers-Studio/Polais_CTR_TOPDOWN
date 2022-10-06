@@ -265,6 +265,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd065021ae3b0874ea0582bd2c602712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7327408193039728371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 818288448, guid: 7fc210bf4e89a5543bc9cf6d2d4b1b19, type: 3}
+  m_PrefabInstance: {fileID: 7327408192775612851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2b58c7d1c49a84c899112cbdda6398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &9106983069128340584 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2004856324311571931, guid: 7fc210bf4e89a5543bc9cf6d2d4b1b19, type: 3}
+  m_PrefabInstance: {fileID: 7327408192775612851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7327408192921573738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -428,6 +444,10 @@ PrefabInstance:
       propertyPath: _weapon
       value: 
       objectReference: {fileID: 7327408191880391181}
+    - target: {fileID: 4947875611861965233, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
+      propertyPath: _switcher
+      value: 
+      objectReference: {fileID: 7327408193039728371}
     - target: {fileID: 7124045979969674969, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
       propertyPath: _skills.Array.size
       value: 1
@@ -452,6 +472,10 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 7467622592743522151}
+    - target: {fileID: 8336556251669236252, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
+      propertyPath: _spawnTransform
+      value: 
+      objectReference: {fileID: 9106983069128340584}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
 --- !u!114 &2385302836355875035 stripped
