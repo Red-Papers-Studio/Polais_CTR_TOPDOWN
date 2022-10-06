@@ -254,6 +254,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2460460727187367137, guid: 7fc210bf4e89a5543bc9cf6d2d4b1b19, type: 3}
   m_PrefabInstance: {fileID: 7327408192775612851}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7043758541448055185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 319856724923113506, guid: 7fc210bf4e89a5543bc9cf6d2d4b1b19, type: 3}
+  m_PrefabInstance: {fileID: 7327408192775612851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d83be323957de47940d5dc17905ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7327408191880391181 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2013004734, guid: 7fc210bf4e89a5543bc9cf6d2d4b1b19, type: 3}
@@ -476,6 +487,10 @@ PrefabInstance:
       propertyPath: _spawnTransform
       value: 
       objectReference: {fileID: 9106983069128340584}
+    - target: {fileID: 8336556251669236252, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
+      propertyPath: _animationController
+      value: 
+      objectReference: {fileID: 7043758541448055185}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a459b51f63e230b49bb8224e19a36d3d, type: 3}
 --- !u!114 &2385302836355875035 stripped

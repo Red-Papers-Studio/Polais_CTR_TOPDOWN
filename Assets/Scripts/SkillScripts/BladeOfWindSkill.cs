@@ -7,12 +7,12 @@ namespace Assets.Scripts.SkillScripts
         [SerializeField] private Transform _spawnTransform;
         [SerializeField] private GameObject _windObject;
         [SerializeField] private float _windSpeed;
-        [SerializeField] private Animator _animator;
+        [SerializeField] private GeneralAnimationController _animationController;
 
         protected override void AttackAction(SkillData skillData)
         {
-            _animator.SetBool("IsWindBladeAttack", true);
-            
+            _animationController.Animator.SetBool("IsWindBladeAttack", true);
+            _animationController.OnAnimatorInvoke += AnimatorInvokeHandler;
         }
 
         public void CreateWind()
@@ -23,8 +23,21 @@ namespace Assets.Scripts.SkillScripts
 
         public void EndAnimation()
         {
-            _animator.SetBool("IsWindBladeAttack", false);
+            _animationController.Animator.SetBool("IsWindBladeAttack", false);
+            _animationController.OnAnimatorInvoke -= AnimatorInvokeHandler;
             _isSkillActive = false;
+        }
+
+        private void AnimatorInvokeHandler(Animator animator, string value)
+        {
+            if(value == "CreateWind")
+            {
+                CreateWind();
+            }
+            else if(value == "EndWindBladeCastAnimationAnimation")
+            {
+                EndAnimation();
+            }
         }
     }
 }
