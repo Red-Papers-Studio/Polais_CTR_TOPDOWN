@@ -16,7 +16,8 @@ public class TipShower : MonoBehaviour
             _textObject.text = "WASD - Movement\n" +
                            "Space or F - Acceleration\n" +
                            "Q - Weapon change\n" +
-                           "Mouse0 - Attack";
+                           "Mouse0 - Attack\n" +
+                           "1,2...9 - Use skills";
 
             _isActive = true;
         }
