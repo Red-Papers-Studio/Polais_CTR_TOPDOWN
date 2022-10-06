@@ -1936,7 +1936,7 @@ MonoBehaviour:
   Id: 0
   _view: {fileID: 7150388640928408855}
   _skillData: {fileID: 11400000, guid: c297f1801c2ef7c4c8cf20ebe7873d7a, type: 2}
-  _weapon: {fileID: 0}
+  _switcher: {fileID: 0}
   _magicArrow: {fileID: 1428599256910799269, guid: ff0a9bcb37d4cb844a6a7f63365836c8, type: 3}
 --- !u!1 &6080456047281952348
 GameObject:
@@ -1974,7 +1974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7124045979969674969
