@@ -36,5 +36,6 @@ public class FireArrowSkill : Skill
         {
             _switcher.SwitchWeapon();
         }
+        _isSkillActive = false;
     }
 }
