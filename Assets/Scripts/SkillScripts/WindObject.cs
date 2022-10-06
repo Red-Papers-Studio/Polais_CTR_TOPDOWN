@@ -2,25 +2,24 @@
 
 namespace Assets.Scripts.SkillScripts
 {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent (typeof(Collider))]
     public class WindObject : MonoBehaviour
     {
         [SerializeField]
         private SkillData _skillData;
         [SerializeField]
-        private float lifeTime;
-        private Collider _arrowCollider;
-        [SerializeField]
-        private float _windAttackDistance = 0;
-        private float _distanceToTarget;
+        private float _windAttackDistance = 10;
+        private Vector3 _startPosition;
 
         private void Start()
         {
-            _arrowCollider = GetComponent<Collider>();
+            _startPosition = transform.position;
         }
 
         private void FixedUpdate()
         {
-            if(_windAttackDistance >= _distanceToTarget)
+            if(_windAttackDistance <= Vector3.Distance(_startPosition, transform.position))
             {
                 Destroy(gameObject);
             }
