@@ -50,7 +50,7 @@ public class ShortRangeWeapon : MonoBehaviour, IWeapon
         return !weaponData.IsReloading && TimeSinceLastAttack >= weaponData.ReloadingTime;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision) 
     {
         //IDamageable target = collision.gameObject.GetComponent<IDamageable>();
         if(collision.gameObject.TryGetComponent<IDamageable>(out IDamageable target))

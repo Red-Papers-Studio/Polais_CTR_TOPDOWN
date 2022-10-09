@@ -66,6 +66,7 @@ public class PlayerMoving : MonoBehaviour
 
     private void Move(float moveVertical, float moveHorizontal, float accelaration)
     {
+        _characterController.Move(new Vector3(0, -0.1f, 0));
         if (accelaration < 1)
         {
             accelaration = 1;
