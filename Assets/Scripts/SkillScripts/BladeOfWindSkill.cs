@@ -2,42 +2,17 @@
 
 namespace Assets.Scripts.SkillScripts
 {
-    public class BladeOfWindSkill : Skill
+    public class BladeOfWindSkill : ImpulseSkill
     {
-        [SerializeField] private Transform _spawnTransform;
-        [SerializeField] private GameObject _windObject;
-        [SerializeField] private float _windSpeed;
-        [SerializeField] private GeneralAnimationController _animationController;
+        [SerializeField] private string _boolParameterForSkill = "IsWindBladeAttack";
+        [SerializeField] private string _createObjectValue = "CreateWind";
+        [SerializeField] private string _endAnimationValue = "EndWindBladeCastAnimationAnimation";
 
-        protected override void AttackAction(SkillData skillData)
+        protected override void Initialize(out string boolParameterForSkill, out string createObjectValue, out string endAnimationValue)
         {
-            _animationController.Animator.SetBool("IsWindBladeAttack", true);
-            _animationController.OnAnimatorInvoke += AnimatorInvokeHandler;
-        }
-
-        public void CreateWind()
-        {
-            var wind = Instantiate(_windObject, _spawnTransform.position, _spawnTransform.rotation);
-            wind.GetComponent<Rigidbody>().velocity = _spawnTransform.transform.forward * _windSpeed;
-        }
-
-        public void EndAnimation()
-        {
-            _animationController.Animator.SetBool("IsWindBladeAttack", false);
-            _animationController.OnAnimatorInvoke -= AnimatorInvokeHandler;
-            _isSkillActive = false;
-        }
-
-        private void AnimatorInvokeHandler(Animator animator, string value)
-        {
-            if(value == "CreateWind")
-            {
-                CreateWind();
-            }
-            else if(value == "EndWindBladeCastAnimationAnimation")
-            {
-                EndAnimation();
-            }
+            boolParameterForSkill = _boolParameterForSkill;
+            createObjectValue = _createObjectValue;
+            endAnimationValue = _endAnimationValue;
         }
     }
 }
