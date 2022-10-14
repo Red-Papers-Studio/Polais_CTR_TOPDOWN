@@ -11,16 +11,12 @@ namespace Assets.Scripts.SkillScripts
     {
         [SerializeField]
         private SkillData _skillData;
-        [SerializeField]
-        private float _attackDistance = 10;
 
         [SerializeField] private float _destoyAfterPassedTime = 1;
         [SerializeField] private VisualEffect _visualEffect;
-        private Vector3 _startPosition;
 
         private void Start()
         {
-            _startPosition = transform.position;
             StartCoroutine(DestroyObjectCoroutine());
         }
 
@@ -37,21 +33,12 @@ namespace Assets.Scripts.SkillScripts
             _visualEffect.SetFloat("SizeMultiplier", 0f);
             Destroy(gameObject);
         }
-
-        private void FixedUpdate()
+        private void OnTriggerEnter(Collider collider)
         {
-            if(_attackDistance <= Vector3.Distance(_startPosition, transform.position))
-            {
-                Destroy(gameObject);
-            }
-        }
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.TryGetComponent<IDamageable>(out IDamageable target))
+            if (collider.gameObject.TryGetComponent<IDamageable>(out IDamageable target))
             {
                 target.Damage(_skillData.Damage);
             }
-            Destroy(gameObject);
         }
     }
 }

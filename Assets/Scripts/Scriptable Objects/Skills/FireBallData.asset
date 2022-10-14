@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireBallData
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: 2352faa487e044f49a3fd1973adb7800, type: 3}
-  Damage: 670
+  Damage: 1000
   CritChance: 0.17
   CritScale: 2.5
   ManaCost: 100

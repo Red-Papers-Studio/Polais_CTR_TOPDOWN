@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 254932349}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: ForRaycast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -7106,6 +7106,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Church
       objectReference: {fileID: 0}
+    - target: {fileID: 5989994811715357425, guid: 0eae97c3decda50448efe04d5356e36b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989994811715357425, guid: 0eae97c3decda50448efe04d5356e36b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f0a937526f1f7324388281c003506b86, type: 2}
+    - target: {fileID: 5989994811715357425, guid: 0eae97c3decda50448efe04d5356e36b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: dff53ed4295f7b44fbe086ac5f0bfd8e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eae97c3decda50448efe04d5356e36b, type: 3}
 --- !u!1001 &5486316506669413459
