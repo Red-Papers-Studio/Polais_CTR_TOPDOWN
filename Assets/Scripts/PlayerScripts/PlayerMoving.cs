@@ -15,6 +15,7 @@ public class PlayerMoving : MonoBehaviour
     [SerializeField] private float StaminaCostPerFrame = 2f;
     [SerializeField] private PlayerStats Stats;
 
+    private const float maxAccelaration = 2;
     private CharacterController _characterController;
     private Animator _animator;
 
@@ -34,14 +35,15 @@ public class PlayerMoving : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
         float accelaration = Input.GetAxis("Acceleration");
 
-        Rotation(moveHorizontal);
+        Rotation();
         Move(moveVertical, moveHorizontal, accelaration);
     }
 
-    private void Rotation(float moveHorizontal)
+    private void Rotation()
     {
         Vector3 Mpos = Input.mousePosition;
         Ray mouseRay = Camera.main.ScreenPointToRay(Mpos);
+        
         RaycastHit hit;
         Physics.Raycast(mouseRay, out hit);
 
@@ -76,8 +78,7 @@ public class PlayerMoving : MonoBehaviour
         {
             if (Stats.Stamina > 0)
             {
-                Stats.Stamina -= StaminaCostPerFrame;
-                accelaration = 2;
+                accelaration = maxAccelaration;
             }
         }
 
@@ -130,5 +131,10 @@ public class PlayerMoving : MonoBehaviour
 
         _animator.SetFloat("Speed", movement.x);
         _animator.SetFloat("HorizontalSpeed", movement.y);
+
+        if(currentSpeed.x == maxAccelaration)
+        {
+            Stats.Stamina -= StaminaCostPerFrame;
+        }
     }
 }
