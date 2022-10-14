@@ -51,7 +51,7 @@ public class PlayerMoving : MonoBehaviour
         Vector3 coordinate = pos;
 
         test.transform.position = coordinate;
-
+        
         if (isArrowAttack)
         {
             Vector3 direction = bowTarget.transform.position - transform.position;

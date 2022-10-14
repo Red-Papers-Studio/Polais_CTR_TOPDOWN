@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44500834, g: 0.48878455, b: 0.542425, a: 1}
+  m_IndirectSpecularColor: {r: 0.445009, g: 0.48878533, b: 0.5424261, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -517,6 +517,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5539060027887736808, guid: cddceb9380467294eb6533549b5a6493, type: 3}
   m_PrefabInstance: {fileID: 7327408191958873453}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &611582541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 611582542}
+  m_Layer: 2
+  m_Name: MagicSpawnPointFire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &611582542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611582541}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.447, y: 1.3339999, z: 0.703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2073815177}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &811074245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7366,6 +7397,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874391467902887049, guid: cddceb9380467294eb6533549b5a6493, type: 3}
+      propertyPath: _objectSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874391467902887049, guid: cddceb9380467294eb6533549b5a6493, type: 3}
+      propertyPath: _spawnTransform
+      value: 
+      objectReference: {fileID: 611582542}
     - target: {fileID: 7912301572599094280, guid: cddceb9380467294eb6533549b5a6493, type: 3}
       propertyPath: m_Name
       value: FullPackHero
@@ -7416,15 +7455,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9106983069128340584, guid: cddceb9380467294eb6533549b5a6493, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.011
       objectReference: {fileID: 0}
     - target: {fileID: 9106983069128340584, guid: cddceb9380467294eb6533549b5a6493, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 1.334
       objectReference: {fileID: 0}
     - target: {fileID: 9106983069128340584, guid: cddceb9380467294eb6533549b5a6493, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 1.17
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7691669729801474140, guid: cddceb9380467294eb6533549b5a6493, type: 3}

@@ -78,6 +78,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skillData: {fileID: 11400000, guid: 5e7c9a3d40d4e344e9eef5b1eb91ac01, type: 2}
   _attackDistance: 10
+  _destoyAfterPassedTime: 1.25
+  _visualEffect: {fileID: 4320009285678083165}
 --- !u!1001 &1233914174800823162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3092987683260706599, guid: e65ede56e185a4c43b4010e50867d896, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Value
-      value: 4.05
+      value: 4.53
       objectReference: {fileID: 0}
     - target: {fileID: 3092987683260706599, guid: e65ede56e185a4c43b4010e50867d896, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Value
@@ -174,5 +176,10 @@ PrefabInstance:
 --- !u!4 &4320009285678083162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3092987683260706592, guid: e65ede56e185a4c43b4010e50867d896, type: 3}
+  m_PrefabInstance: {fileID: 1233914174800823162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &4320009285678083165 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 3092987683260706599, guid: e65ede56e185a4c43b4010e50867d896, type: 3}
   m_PrefabInstance: {fileID: 1233914174800823162}
   m_PrefabAsset: {fileID: 0}
