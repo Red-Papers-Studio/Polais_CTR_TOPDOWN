@@ -29,8 +29,8 @@ namespace Assets.Scripts.SkillScripts
             if (collision.gameObject.TryGetComponent<IDamageable>(out IDamageable target))
             {
                 target.Damage(_skillData.Damage);
-                Destroy(gameObject);
             }
+            Destroy(gameObject);
         }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 654222699456907819}
   - component: {fileID: 3091448799601380811}
   - component: {fileID: 1520944580899730879}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: Bush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,10 +117,10 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Optimized Leaf Material
   m_Shader: {fileID: -6465566751694194690, guid: 9920c1f1781549a46ba081a2a15a16ec, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
+  m_ValidKeywords:
   - BACKFACE_NORMAL_MODE_MIRROR
   - _WINDQUALITY_BEST
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
