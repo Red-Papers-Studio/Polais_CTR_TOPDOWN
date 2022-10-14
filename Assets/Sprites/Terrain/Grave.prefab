@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8387058113551505124}
   - component: {fileID: 3142046036166679153}
   - component: {fileID: 9003476724104542743}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1411817507405113315}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Grave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 2844796349896126596}
   - component: {fileID: 7822066721089655425}
   - component: {fileID: 9083145059419328465}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.005 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
