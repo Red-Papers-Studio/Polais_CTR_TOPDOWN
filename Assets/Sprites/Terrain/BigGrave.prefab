@@ -244,6 +244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7462009065930977468, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7837865449038490118, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -309,6 +313,10 @@ PrefabInstance:
     - target: {fileID: 7462009065930977468, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
       propertyPath: m_Name
       value: Fence (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462009065930977468, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7837865449038490118, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
       propertyPath: m_RootOrder
@@ -380,6 +388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7462009065930977468, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7837865449038490118, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -446,6 +458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7462009065930977468, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7837865449038490118, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -511,6 +527,10 @@ PrefabInstance:
     - target: {fileID: 7462009065930977468, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
       propertyPath: m_Name
       value: Fence (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462009065930977468, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7837865449038490118, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
       propertyPath: m_RootOrder
@@ -581,6 +601,10 @@ PrefabInstance:
     - target: {fileID: 7462009065930977468, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
       propertyPath: m_Name
       value: Fence (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462009065930977468, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7837865449038490118, guid: 912833b48aa45c349bd2cab80e68c844, type: 3}
       propertyPath: m_RootOrder
