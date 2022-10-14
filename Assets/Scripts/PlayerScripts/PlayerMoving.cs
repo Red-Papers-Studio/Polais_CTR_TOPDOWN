@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -43,10 +44,10 @@ public class PlayerMoving : MonoBehaviour
     {
         Vector3 Mpos = Input.mousePosition;
         Ray mouseRay = Camera.main.ScreenPointToRay(Mpos);
-        
-        RaycastHit hit;
-        Physics.Raycast(mouseRay, out hit);
+       
+        var hits = Physics.RaycastAll(mouseRay, float.MaxValue, 3);
 
+        RaycastHit hit = hits.LastOrDefault(x => x.collider.gameObject.tag == "ForRaycast");
         Vector3 pos = hit.point;
         pos.y = transform.position.y;
 
